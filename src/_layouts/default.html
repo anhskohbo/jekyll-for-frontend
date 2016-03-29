@@ -1,0 +1,23 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    {% include head.html %}
+</head>
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div id="page" class="site">
+        <a class="skip-link sr-only" href="#main">Skip to content</a>
+
+        {% include nav.html %}
+
+        {{ content }}
+
+        {% include footer.html %}
+    </div>
+
+    {% include scripts.html %}
+</body>
+</html>

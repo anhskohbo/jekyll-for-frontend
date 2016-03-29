@@ -1,0 +1,7 @@
+# Path settings
+source: ./src
+destination: ./dist
+
+# Build settings
+markdown: kramdown
+exclude: ["node_modules", "gulpfile.js", "package.json"]

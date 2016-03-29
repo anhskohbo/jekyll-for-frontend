@@ -1,0 +1,16 @@
+// Import variables
+@import 'variables';
+
+// Import vendor
+@import 'vendor/bootstrap';
+@import 'vendor/include-media';
+
+// Compoments
+@import "compoments/grid";
+@import "compoments/posts-and-pages";
+
+// WP Core
+@import "wp/accessibility";
+@import "wp/alignments";
+@import "wp/galleries";
+@import "wp/captions";
