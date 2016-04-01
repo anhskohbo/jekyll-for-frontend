@@ -5,6 +5,8 @@ var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var notify       = require('gulp-notify');
 var htmlmin      = require('gulp-htmlmin');
+var iconfont     = require('gulp-iconfont');
+var iconfontCss  = require('gulp-iconfont-css');
 var csso         = require('gulp-csso');
 var uglify       = require('gulp-uglify');
 var filter       = require('gulp-filter');
@@ -13,6 +15,7 @@ var del          = require('del');
 var cp           = require('child_process');
 
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+
 var handleErrors = function(errorObject, callback) {
   notify.onError(errorObject.toString()).apply(this, arguments);
   if (typeof this.emit === 'function') this.emit('end');
@@ -27,6 +30,33 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.reload({ stream: true, match: '**/*.css' }))
     .pipe(gulp.dest('src/css'));
+});
+
+gulp.task('iconfont', function () {
+  var fontName = require('path').basename(__dirname);
+  var runTimestamp = Math.round(Date.now() / 1000);
+
+  var fontSettings = {
+    fontName: fontName,
+    prependUnicode: true,
+    timestamp: runTimestamp,
+    normalize: true,
+    fontHeight: 1001,
+    formats: ['svg', 'ttf', 'eot', 'woff'],
+  };
+
+  var cssSetings = {
+    fontName: fontName,
+    cssClass: 'atf',
+    fontPath: '../fonts/',
+    path: 'src/_sass/compoments/_icons-template.scss',
+    targetPath: '../_sass/compoments/_icons.scss',
+  };
+
+  return gulp.src('src/_svg/**/*.svg')
+    .pipe(iconfontCss(cssSetings))
+    .pipe(iconfont(fontSettings))
+    .pipe(gulp.dest('src/fonts'));
 });
 
 gulp.task('zip:dist', ['force-build', 'sass'], function () {
@@ -72,7 +102,7 @@ gulp.task('build:min', ['clean:min', 'force-build', 'sass'], function () {
     .pipe(gulp.dest('min'));
 });
 
-gulp.task('serve', ['build', 'sass'], function() {
+gulp.task('serve', ['build', 'iconfont', 'sass'], function() {
   browserSync({
     server: { baseDir: 'dist' }
   });
@@ -80,8 +110,9 @@ gulp.task('serve', ['build', 'sass'], function() {
 
 gulp.task('watch', function () {
   gulp.watch('src/_sass/**/*.scss', ['sass']);
+  gulp.watch('src/_svg/**/*.svg', ['iconfont', 'build', browserSync.reload]);
 
-  gulp.watch(['src/_data/*'], ['force-rebuild', browserSync.reload]);
+  gulp.watch(['src/_data/*'], ['force-build', browserSync.reload]);
   gulp.watch(['src/**/*.html', 'src/js/*.js'], ['build', browserSync.reload]);
 });
 
