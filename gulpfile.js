@@ -8,6 +8,7 @@ var htmlmin      = require('gulp-htmlmin');
 var csso         = require('gulp-csso');
 var uglify       = require('gulp-uglify');
 var filter       = require('gulp-filter');
+var zip          = require('gulp-zip');
 var del          = require('del');
 var cp           = require('child_process');
 
@@ -26,6 +27,12 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.reload({ stream: true, match: '**/*.css' }))
     .pipe(gulp.dest('src/css'));
+});
+
+gulp.task('zip:dist', ['force-build', 'sass'], function () {
+  return gulp.src('dist/**/*')
+    .pipe(zip('dist.zip'))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('clean:dist', function () {
