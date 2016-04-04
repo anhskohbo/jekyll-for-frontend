@@ -146,11 +146,13 @@ gulp.task('build:min', ['clean:min', 'build'], function () {
 
 // Build jekyll
 gulp.task('jekyll-build', function (done) {
-  return cp.spawn(jekyll , ['build', '--incremental']).on('close', done);
+  return cp.spawn(jekyll , ['build', '--incremental'], {stdio: 'inherit'})
+    .on('close', done);
 });
 
 gulp.task('force-jekyll-build', function (done) {
-  return cp.spawn(jekyll , ['build']).on('close', done);
+  return cp.spawn(jekyll , ['build'], {stdio: 'inherit'})
+    .on('close', done);
 });
 
 // Rebuild (for watch only)
