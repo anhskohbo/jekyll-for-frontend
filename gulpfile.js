@@ -168,4 +168,10 @@ gulp.task('serve', ['build'], function () {
   gulp.watch(['src/_data/*'], ['force-rebuild-jekyll']);
 });
 
+gulp.task('serve:min', ['build:min'], function () {
+  browserSync.init({
+    server: './dist-min'
+  });
+});
+
 gulp.task('default', ['serve']);
