@@ -1,7 +1,14 @@
-# Path settings
+# Do not change this section settings
 source: ./src
 destination: ./dist
 
 # Build settings
 markdown: kramdown
 exclude: []
+
+# Front Matter defaults
+defaults:
+  - scope:
+      type: "pages"
+    values:
+      layout: "default"
