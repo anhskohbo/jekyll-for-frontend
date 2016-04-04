@@ -5,6 +5,8 @@ var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var notify       = require('gulp-notify');
+var imagemin     = require('gulp-imagemin');
+var pngquant     = require('imagemin-pngquant');
 var htmlmin      = require('gulp-htmlmin');
 var iconfont     = require('gulp-iconfont');
 var iconfontCss  = require('gulp-iconfont-css');
@@ -15,14 +17,13 @@ var zip          = require('gulp-zip');
 var del          = require('del');
 var cp           = require('child_process');
 
-var reload = browserSync.reload;
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
-
 var handleErrors = function (errorObject, callback) {
   notify.onError(errorObject.toString()).apply(this, arguments);
   if (typeof this.emit === 'function') this.emit('end');
 };
 
+// Cleaner
 gulp.task('clean:dist', function () {
   return del('dist');
 });
@@ -31,6 +32,9 @@ gulp.task('clean:min', function () {
   return del('dist-min');
 });
 
+gulp.task('clean', ['clean:dist', 'clean:min']);
+
+// Compile SCSS
 gulp.task('sass', function () {
   return gulp.src('src/_sass/*.scss')
     .pipe(sourcemaps.init())
@@ -49,6 +53,20 @@ gulp.task('css', function () {
     .pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
+// Minifiy images
+gulp.task('images', function () {
+  var configs = {
+    progressive: true,
+    svgoPlugins: [{ removeViewBox: false }],
+    use: [pngquant()]
+  };
+
+  return gulp.src('src/img/**/*')
+    .pipe(imagemin(configs))
+    .pipe(gulp.dest('src/img'));
+});
+
+// Iconfont from SVGs
 gulp.task('iconfont', function () {
   var fontName = require('path').basename(__dirname);
   var runTimestamp = Math.round(Date.now() / 1000);
@@ -76,21 +94,19 @@ gulp.task('iconfont', function () {
     .pipe(gulp.dest('src/fonts'));
 });
 
-gulp.task('zip:dist', ['force-build', 'sass'], function () {
-  return gulp.src('dist/**/*')
-    .pipe(zip('dist.zip'))
-    .pipe(gulp.dest('./'));
-});
-
-gulp.task('build', function (done) {
+// Build jekyll
+gulp.task('jekyll-build', function (done) {
   return cp.spawn(jekyll , ['build', '--incremental']).on('close', done);
 });
 
-gulp.task('force-build', function (done) {
+gulp.task('force-jekyll-build', function (done) {
   return cp.spawn(jekyll , ['build']).on('close', done);
 });
 
-gulp.task('build:min', ['clean:min', 'force-build', 'sass'], function () {
+// Build tasks
+gulp.task('build', sequence('images', 'iconfont', 'force-jekyll-build', 'sass', 'css'));
+
+gulp.task('build:min', ['clean:min', 'build'], function () {
   var htmlFilter = filter(['**/*.html'], { restore: true });
   var cssFilter  = filter(['**/*.css'], { restore: true });
   var jsFilter   = filter(['**/*.js', '!**/*.min.js'], { restore: true });
@@ -111,19 +127,34 @@ gulp.task('build:min', ['clean:min', 'force-build', 'sass'], function () {
     .pipe(gulp.dest('dist-min'));
 });
 
-gulp.task('rebuild', ['build'], function () {
+// Make a dist.zip
+gulp.task('zip:dist', ['build'], function () {
+  return gulp.src('dist/**/*')
+    .pipe(zip('dist.zip'))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('zip:min', ['build:min'], function () {
+  return gulp.src('dist/**/*')
+    .pipe(zip('dist-min.zip'))
+    .pipe(gulp.dest('./'));
+});
+
+// Rebuild (for watch)
+gulp.task('rebuild-jekyll', ['jekyll-build'], function () {
   return browserSync.reload();
 });
 
-gulp.task('force-rebuild', ['force-build'], function () {
+gulp.task('force-rebuild-jekyll', ['force-jekyll-build'], function () {
   return browserSync.reload();
 });
 
-gulp.task('rebuild-iconfont',  ['iconfont', 'build'], function () {
+gulp.task('rebuild-iconfont',  ['iconfont', 'jekyll-build'], function () {
   return browserSync.reload();
 });
 
-gulp.task('serve', ['sass', 'iconfont', 'build'], function () {
+// Server via browserSync
+gulp.task('serve', ['build'], function () {
   browserSync.init({
     server: './dist'
   });
@@ -133,9 +164,8 @@ gulp.task('serve', ['sass', 'iconfont', 'build'], function () {
 
   gulp.watch(['src/_svg/**/*.svg'], ['rebuild-iconfont']);
 
-  gulp.watch(['src/**/*.html', 'src/js/**/*.js', 'src/img/**/*'], ['rebuild']);
-  gulp.watch(['src/_data/*'], ['force-rebuild']);
+  gulp.watch(['src/**/*.html', 'src/js/**/*.js', 'src/img/**/*'], ['rebuild-jekyll']);
+  gulp.watch(['src/_data/*'], ['force-rebuild-jekyll']);
 });
 
-gulp.task('clean', ['clean:dist', 'clean:min']);
 gulp.task('default', ['serve']);
