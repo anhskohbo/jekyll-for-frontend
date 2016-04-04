@@ -1,5 +1,11 @@
 - title: Home
   href: index.html
+  submenu:
+    - title: Submenu 1
+      href: "#"
+
+    - title: Submenu 2
+      href: "#main"
 
 - title: Blog
   href: single.html
