@@ -15,11 +15,10 @@ var zip          = require('gulp-zip');
 var del          = require('del');
 var cp           = require('child_process');
 
-
 var reload = browserSync.reload;
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
-var handleErrors = function(errorObject, callback) {
+var handleErrors = function (errorObject, callback) {
   notify.onError(errorObject.toString()).apply(this, arguments);
   if (typeof this.emit === 'function') this.emit('end');
 };
@@ -112,19 +111,19 @@ gulp.task('build:min', ['clean:min', 'force-build', 'sass'], function () {
     .pipe(gulp.dest('dist-min'));
 });
 
-gulp.task('rebuild', ['build'], function() {
+gulp.task('rebuild', ['build'], function () {
   return browserSync.reload();
 });
 
-gulp.task('force-rebuild', ['force-build'], function() {
+gulp.task('force-rebuild', ['force-build'], function () {
   return browserSync.reload();
 });
 
-gulp.task('rebuild-iconfont',  ['iconfont', 'build'], function() {
+gulp.task('rebuild-iconfont',  ['iconfont', 'build'], function () {
   return browserSync.reload();
 });
 
-gulp.task('serve', ['sass', 'iconfont', 'build'], function() {
+gulp.task('serve', ['sass', 'iconfont', 'build'], function () {
   browserSync.init({
     server: './dist'
   });
