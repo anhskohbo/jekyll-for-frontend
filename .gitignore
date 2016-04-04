@@ -1,6 +1,6 @@
 node_modules/
+dist-min/
 dist/
-min/
 .sass-cache
 .jekyll-metadata
 *.css.map

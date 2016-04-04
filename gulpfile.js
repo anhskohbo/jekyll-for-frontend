@@ -1,4 +1,5 @@
 var gulp         = require('gulp');
+var sequence     = require('gulp-sequence');
 var browserSync  = require('browser-sync').create();
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
@@ -14,6 +15,8 @@ var zip          = require('gulp-zip');
 var del          = require('del');
 var cp           = require('child_process');
 
+
+var reload = browserSync.reload;
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 var handleErrors = function(errorObject, callback) {
@@ -81,11 +84,11 @@ gulp.task('zip:dist', ['force-build', 'sass'], function () {
 });
 
 gulp.task('build', function (done) {
-  return cp.spawn( jekyll , ['build', '--incremental']).on('close', done);
+  return cp.spawn(jekyll , ['build', '--incremental']).on('close', done);
 });
 
 gulp.task('force-build', function (done) {
-  return cp.spawn( jekyll , ['build']).on('close', done);
+  return cp.spawn(jekyll , ['build']).on('close', done);
 });
 
 gulp.task('build:min', ['clean:min', 'force-build', 'sass'], function () {
@@ -109,22 +112,31 @@ gulp.task('build:min', ['clean:min', 'force-build', 'sass'], function () {
     .pipe(gulp.dest('dist-min'));
 });
 
-gulp.task('serve', ['build', 'iconfont', 'sass'], function() {
+gulp.task('rebuild', ['build'], function() {
+  return browserSync.reload();
+});
+
+gulp.task('force-rebuild', ['force-build'], function() {
+  return browserSync.reload();
+});
+
+gulp.task('rebuild-iconfont',  ['iconfont', 'build'], function() {
+  return browserSync.reload();
+});
+
+gulp.task('serve', ['sass', 'iconfont', 'build'], function() {
   browserSync.init({
     server: './dist'
   });
-});
 
-gulp.task('watch', function () {
   gulp.watch(['src/_sass/**/*.scss'], ['sass']);
   gulp.watch(['src/css/**/*.css', '!src/css/main.css'], ['css']);
 
-  gulp.watch(['src/img/**/*'], ['images', browserSync.reload]);
-  gulp.watch(['src/_svg/**/*.svg'], ['iconfont', 'build', browserSync.reload]);
+  gulp.watch(['src/_svg/**/*.svg'], ['rebuild-iconfont']);
 
-  gulp.watch(['src/**/*.html', 'src/js/**/*.js', 'src/img/**/*'], ['build', browserSync.reload]);
-  gulp.watch(['src/_data/*'], ['force-build', browserSync.reload]);
+  gulp.watch(['src/**/*.html', 'src/js/**/*.js', 'src/img/**/*'], ['rebuild']);
+  gulp.watch(['src/_data/*'], ['force-rebuild']);
 });
 
 gulp.task('clean', ['clean:dist', 'clean:min']);
-gulp.task('default', ['serve', 'watch']);
+gulp.task('default', ['serve']);
