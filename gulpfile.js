@@ -10,10 +10,12 @@ var pngquant     = require('imagemin-pngquant');
 var htmlmin      = require('gulp-htmlmin');
 var iconfont     = require('gulp-iconfont');
 var iconfontCss  = require('gulp-iconfont-css');
-var csso         = require('gulp-csso');
+var cssnano      = require('gulp-cssnano');
 var uglify       = require('gulp-uglify');
 var filter       = require('gulp-filter');
 var zip          = require('gulp-zip');
+var w3cjs        = require('gulp-w3cjs');
+var through2     = require('through2');
 var del          = require('del');
 var cp           = require('child_process');
 
@@ -94,13 +96,28 @@ gulp.task('iconfont', function () {
     .pipe(gulp.dest('src/fonts'));
 });
 
-// Build jekyll
-gulp.task('jekyll-build', function (done) {
-  return cp.spawn(jekyll , ['build', '--incremental']).on('close', done);
+// Make a dist.zip
+gulp.task('zip:dist', ['build'], function () {
+  return gulp.src('dist/**/*')
+    .pipe(zip('dist.zip'))
+    .pipe(gulp.dest('./'));
 });
 
-gulp.task('force-jekyll-build', function (done) {
-  return cp.spawn(jekyll , ['build']).on('close', done);
+gulp.task('zip:min', ['build:min'], function () {
+  return gulp.src('dist/**/*')
+    .pipe(zip('dist-min.zip'))
+    .pipe(gulp.dest('./'));
+});
+
+// Validate HTML via W3C
+gulp.task('w3c', function () {
+  var reporter = through2.obj(function (file, enc, cb) {
+    cb(null, file);
+  });
+
+  return gulp.src('dist/*.html')
+    .pipe(w3cjs())
+    .pipe(reporter);
 });
 
 // Build tasks
@@ -117,7 +134,7 @@ gulp.task('build:min', ['clean:min', 'build'], function () {
     .pipe(htmlFilter.restore)
 
     .pipe(cssFilter)
-    .pipe(csso())
+    .pipe(cssnano())
     .pipe(cssFilter.restore)
 
     .pipe(jsFilter)
@@ -127,20 +144,16 @@ gulp.task('build:min', ['clean:min', 'build'], function () {
     .pipe(gulp.dest('dist-min'));
 });
 
-// Make a dist.zip
-gulp.task('zip:dist', ['build'], function () {
-  return gulp.src('dist/**/*')
-    .pipe(zip('dist.zip'))
-    .pipe(gulp.dest('./'));
+// Build jekyll
+gulp.task('jekyll-build', function (done) {
+  return cp.spawn(jekyll , ['build', '--incremental']).on('close', done);
 });
 
-gulp.task('zip:min', ['build:min'], function () {
-  return gulp.src('dist/**/*')
-    .pipe(zip('dist-min.zip'))
-    .pipe(gulp.dest('./'));
+gulp.task('force-jekyll-build', function (done) {
+  return cp.spawn(jekyll , ['build']).on('close', done);
 });
 
-// Rebuild (for watch)
+// Rebuild (for watch only)
 gulp.task('rebuild-jekyll', ['jekyll-build'], function () {
   return browserSync.reload();
 });
@@ -158,7 +171,16 @@ gulp.task('serve', ['build'], function () {
   browserSync.init({
     server: './dist'
   });
+});
 
+gulp.task('serve:min', ['build:min'], function () {
+  browserSync.init({
+    server: './dist-min'
+  });
+});
+
+// Watch change files
+gulp.task('watch', function () {
   var watchRebuild = [
     'src/**/*.md',
     'src/**/*.html',
@@ -175,10 +197,4 @@ gulp.task('serve', ['build'], function () {
   gulp.watch(['src/_data/*'], ['force-rebuild-jekyll']);
 });
 
-gulp.task('serve:min', ['build:min'], function () {
-  browserSync.init({
-    server: './dist-min'
-  });
-});
-
-gulp.task('default', ['serve']);
+gulp.task('default', ['serve', 'watch']);
