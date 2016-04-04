@@ -159,12 +159,19 @@ gulp.task('serve', ['build'], function () {
     server: './dist'
   });
 
+  var watchRebuild = [
+    'src/**/*.md',
+    'src/**/*.html',
+    'src/js/**/*.js',
+    'src/img/**/*',
+  ];
+
   gulp.watch(['src/_sass/**/*.scss'], ['sass']);
   gulp.watch(['src/css/**/*.css', '!src/css/main.css'], ['css']);
 
   gulp.watch(['src/_svg/**/*.svg'], ['rebuild-iconfont']);
 
-  gulp.watch(['src/**/*.html', 'src/js/**/*.js', 'src/img/**/*'], ['rebuild-jekyll']);
+  gulp.watch(watchRebuild, ['rebuild-jekyll']);
   gulp.watch(['src/_data/*'], ['force-rebuild-jekyll']);
 });
 
