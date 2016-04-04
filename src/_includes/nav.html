@@ -1,6 +1,13 @@
 <ul class="menu main-navigation">
     {% for nav in site.data.menu %}
-    {% if nav.submenu %}
+    {% if nav.megamenu %}
+        <li>
+            <a href="{{ nav.href }}">{{ nav.title }}</a>
+            <div class="megamenu">
+                {% include {{nav.megamenu}} %}
+            </div>
+        </li>
+    {% elsif nav.submenu %}
         <li>
             <a href="{{ nav.href }}">{{ nav.title }}</a>
             <ul>
