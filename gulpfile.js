@@ -121,7 +121,7 @@ gulp.task('w3c', function () {
 });
 
 // Build tasks
-gulp.task('build', sequence('images', 'iconfont', 'force-jekyll-build', 'sass', 'css'));
+gulp.task('build', sequence('force-jekyll-build', 'sass', 'css'));
 
 gulp.task('build:min', ['clean:min', 'build'], function () {
   var htmlFilter = filter(['**/*.html'], { restore: true });
@@ -164,10 +164,6 @@ gulp.task('force-rebuild-jekyll', ['force-jekyll-build'], function () {
   return browserSync.reload();
 });
 
-gulp.task('rebuild-iconfont',  ['iconfont', 'jekyll-build'], function () {
-  return browserSync.reload();
-});
-
 // Server via browserSync
 gulp.task('serve', ['build'], function () {
   browserSync.init({
@@ -192,8 +188,6 @@ gulp.task('watch', function () {
 
   gulp.watch(['src/_sass/**/*.scss'], ['sass']);
   gulp.watch(['src/css/**/*.css', '!src/css/main.css'], ['css']);
-
-  gulp.watch(['src/_svg/**/*.svg'], ['rebuild-iconfont']);
 
   gulp.watch(watchRebuild, ['rebuild-jekyll']);
   gulp.watch(['src/_data/*'], ['force-rebuild-jekyll']);
