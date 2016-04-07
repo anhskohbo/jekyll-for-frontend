@@ -1,0 +1,2 @@
+{% assign id = include.id | slugify: 'pretty' | remove: '/' | prepend:'/' %}
+{{ site.components | where: "id", id }}

@@ -17,4 +17,4 @@ defaults:
 collections:
   components:
     output: true
-    permalink: /:path
+    permalink: /el-.:path
