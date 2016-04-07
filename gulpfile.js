@@ -182,15 +182,22 @@ gulp.task('watch', function () {
   var watchRebuild = [
     'src/**/*.md',
     'src/**/*.html',
-    'src/js/**/*.js',
     'src/img/**/*',
+    'src/js/**/*.js',
+    '!src/_components/**/*',
+  ];
+
+  var watchForceRebuild = [
+    '_config.yml',
+    'src/_data/**/*',
+    'src/_components/**/*',
   ];
 
   gulp.watch(['src/_sass/**/*.scss'], ['sass']);
   gulp.watch(['src/css/**/*.css', '!src/css/main.css'], ['css']);
 
   gulp.watch(watchRebuild, ['rebuild-jekyll']);
-  gulp.watch(['src/_data/*'], ['force-rebuild-jekyll']);
+  gulp.watch(watchForceRebuild, ['force-rebuild-jekyll']);
 });
 
 gulp.task('default', ['serve', 'watch']);
