@@ -99,13 +99,25 @@ gulp.task('iconfont', function () {
 // Make a dist.zip
 gulp.task('zip:dist', ['build'], function () {
   return gulp.src('dist/**/*')
-    .pipe(zip('dist.zip'))
+    .pipe(zip('archive-dist.zip'))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('zip:min', ['build:min'], function () {
   return gulp.src('dist/**/*')
-    .pipe(zip('dist-min.zip'))
+    .pipe(zip('archive-min.zip'))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('zip', function () {
+  var zipPaths = [
+    '**/*',
+    '!archive{,*}.zip',
+    '!node_modules{,/**}',
+  ];
+
+  return gulp.src(zipPaths)
+    .pipe(zip('archive.zip'))
     .pipe(gulp.dest('./'));
 });
 
