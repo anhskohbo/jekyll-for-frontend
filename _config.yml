@@ -1,11 +1,3 @@
-# Do not change this section settings
-source: ./src
-destination: ./dist
-
-# Build settings
-markdown: kramdown
-exclude: []
-
 # Front Matter defaults
 defaults:
   - scope:
@@ -13,8 +5,16 @@ defaults:
     values:
       layout: "default"
 
-# Collections
+# Register Collections
 collections:
   components:
     output: true
     permalink: /el-.:path
+
+# Do not change this section settings
+source: ./src
+destination: ./dist
+
+# Build settings
+markdown: kramdown
+exclude: []
