@@ -1,11 +1,17 @@
 # .travis.yml
 language: node_js
+
 node_js:
 - '4'
 
 cache:
   directories:
   - node_modules
+
+before_script:
+- rvm install 2.2.2
+- npm install -g gulp
+- gem install jekyll
 
 # Build docs, test build
 script:
