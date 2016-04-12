@@ -1,0 +1,23 @@
+// Shorthand mixin for offset positioning
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  position: $position;
+}
+
+// Shorthand mixin for absolute positioning
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+// Shorthand mixin for relative positioning
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+// Shorthand mixin for fixed positioning
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}

@@ -1,0 +1,11 @@
+// Visually hidden element.
+@mixin vhidden() {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// Visually display element.
+@mixin vdisplay {
+  opacity: 1;
+  visibility: visible;
+}
