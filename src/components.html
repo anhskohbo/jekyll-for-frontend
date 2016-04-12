@@ -3,52 +3,54 @@
 
 {% assign componentsByType = site.components | group_by: "type" | sort: "name" %}
 
-<div class="container">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
 
-  <nav id="component-selector" class="wrap">
-    <ul name="section" id="component-select">
-      {% for type in componentsByType %}
+            <nav class="list-group" id="component-selector">
+                <ul id="component-select">
+                    {% for type in componentsByType %} {% if type.name != "" %}
+                    <li id="#guide-{{ type.name }}">{{ type.name | capitalize }}</li>
+                    {% else %}
+                    <li>Basic</li>
+                    {% endif %}
+                    <ul>
+                        {% for entry in type.items %}
+                        <li id="#guide-{{ entry.title | slugify }}">{{ entry.title }}</option>
+                            {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </ul>
+            </nav>
 
-      {% if type.name != "" %}
-        <li id="#guide-{{ type.name }}">{{ type.name | capitalize }}</li>
-      {% else %}
-        <li>Basic</li>
-      {% endif %}
+        </div>
 
-      <ul>
-        {% for entry in type.items %}
-        <li id="#guide-{{ entry.title | slugify }}">{{ entry.title }}</option>
-        {% endfor %}
-      </ul>
-
-      {% endfor %}
-    </ul>
-  </nav>
-
-  {% for type in componentsByType %}
-  <h2 id="guide-{{ type.name }}" class="cf">{{ type.name | capitalize }}</h2>
-  {% for entry in type.items %}
-      <article class="component">
-
-        <header class="component-header">
-          <h3 id="guide-{{ entry.title | slugify }}">{{ entry.title }}</h3>
-            {% if entry.usage %}<p><strong>Usage:</strong> {{ entry.usage }}</p>{% endif %}
-            {% if entry.module %}<p><strong>Include file:</strong> <a href="{{ site.owner.github-repo }}{{ entry.module }}">{{ entry.module }}</a></p>{% endif %}
-            {% if entry.scss %}<p class="header-entry-last"><strong>SCSS file:</strong> <a href="{{ site.owner.github-repo }}{{ entry.scss }}">{{ entry.scss }}</a></p>{% endif %}
-        </header><!-- /.component-header -->
-
-        <div class="component-content">
-          <div class="component-rendered">
-            {{ entry.content }}
-          </div><!-- /.component-rendered -->
-
-          <div class="component-code">
-            {% highlight html %}{{ entry.content }}{% endhighlight %}
-          </div><!-- /.component-code -->
-        </div><!-- /.component-content -->
-
-      </article><!-- /.component -->
-  {% endfor %}
-  {% endfor %}
-
+        <div class="col-md-10">
+            {% for type in componentsByType %}
+            <h2 id="guide-{{ type.name }}" class="cf">{{ type.name | capitalize }}</h2> {% for entry in type.items %}
+            <article class="component">
+                <header class="component-header">
+                    <h3 id="guide-{{ entry.title | slugify }}">{{ entry.title }}</h3> {% if entry.usage %}
+                    <p><strong>Usage:</strong> {{ entry.usage }}</p>{% endif %} {% if entry.module %}
+                    <p><strong>Include file:</strong> <a href="{{ site.owner.github-repo }}{{ entry.module }}">{{ entry.module }}</a></p>{% endif %} {% if entry.scss %}
+                    <p class="header-entry-last"><strong>SCSS file:</strong> <a href="{{ site.owner.github-repo }}{{ entry.scss }}">{{ entry.scss }}</a></p>{% endif %}
+                </header>
+                <!-- /.component-header -->
+                <div class="component-content">
+                    <div class="component-rendered">
+                        {{ entry.content }}
+                    </div>
+                    <!-- /.component-rendered -->
+                    <div class="component-code">
+                        {% highlight html %}{{ entry.content }}{% endhighlight %}
+                    </div>
+                    <!-- /.component-code -->
+                </div>
+                <!-- /.component-content -->
+            </article>
+            <!-- /.component -->
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
 </div>

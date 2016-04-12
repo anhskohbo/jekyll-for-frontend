@@ -1,14 +1,20 @@
 - title: Home
   href: index.html
+
+- title: Blog
+  href: single.html
+
+- title: Components
+  href: components.html
+
+- title: Bootstrap
+  href: bootstrap.html
+
+- title: Dropdown
+  href: #
   submenu:
     - title: Submenu 1
       href: "#"
 
     - title: Submenu 2
       href: "#main"
-
-- title: Blog
-  href: single.html
-
-- title: Bootstrap Unit Tester
-  href: bootstrap.html

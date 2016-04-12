@@ -1,15 +1,19 @@
+# Register Collections
+collections:
+  components:
+    output: true
+    permalink: /el-.:path
+
+  wp:
+    output: false
+    permalink: /wp-.:path
+
 # Front Matter defaults
 defaults:
   - scope:
       type: "pages"
     values:
       layout: "default"
-
-# Register Collections
-collections:
-  components:
-    output: true
-    permalink: /el-.:path
 
 # Do not change this section settings
 source: ./src

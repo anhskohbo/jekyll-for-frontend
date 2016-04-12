@@ -192,17 +192,14 @@ gulp.task('serve:min', ['build:min'], function () {
 // Watch change files
 gulp.task('watch', function () {
   var watchRebuild = [
-    'src/**/*.md',
-    'src/**/*.html',
     'src/img/**/*',
     'src/js/**/*.js',
-    '!src/_components/**/*',
   ];
 
   var watchForceRebuild = [
     '_config.yml',
+    'src/**/*.html',
     'src/_data/**/*',
-    'src/_components/**/*',
   ];
 
   gulp.watch(['src/_sass/**/*.scss'], ['sass']);

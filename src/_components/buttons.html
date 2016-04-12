@@ -4,10 +4,7 @@ layout: default
 title: "Main Content Default Notice"
 type: notices
 scss: _assets/stylesheets/_notices.scss
-module: gg
 usage: "Emphasize post text."
-
 ---
 
-<button type="button" class="btn btn-default">Buttons</button>
-
+<button type="button" class="btn btn-default">{{ site.name | default: 'Default' }}</button>
