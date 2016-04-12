@@ -7,6 +7,9 @@ cache:
   directories:
   - node_modules
 
+before_script:
+- npm install -g gulp
+
 # Build docs, test build
 script:
 - gulp build
