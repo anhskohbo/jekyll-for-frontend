@@ -20,6 +20,7 @@
     "gulp-util": "^3.0.7",
     "gulp-w3cjs": "^1.2.0",
     "gulp-zip": "^3.2.0",
-    "imagemin-pngquant": "^4.2.2"
+    "imagemin-pngquant": "^4.2.2",
+    "through2": "^2.0.1"
   }
 }
