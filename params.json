@@ -1,6 +1,0 @@
-{
-  "name": "Jekyll for frontend",
-  "tagline": "Jekyll + Gulp & BrowserSync",
-  "body": "# Jekyll For Frontend\r\n\r\n## Install\r\n\r\nMake sure you have `npm` and `jekyll`, `gulp` installed on your system. See more details to install it.\r\n\r\nDownload this [repo](https://github.com/anhskohbo/jekyll-for-frontend/archive/master.zip) or clone to your computer. \r\n\r\n`$ git clone https://github.com/anhskohbo/jekyll-for-frontend.git`\r\n\r\n## How to run\r\n\r\nOpen your terminal (cmd) and run commands below:\r\n\r\n```\r\ncd jekyll-for-frontend\r\nnpm install\r\ngulp\r\n```\r\n\r\nYou will se the light.\r\n\r\n## Gulp command\r\n\r\n...\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
