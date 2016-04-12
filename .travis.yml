@@ -1,5 +1,6 @@
 # .travis.yml
 language: node_js
+
 node_js:
 - '4'
 
@@ -9,6 +10,7 @@ cache:
 
 before_script:
 - npm install -g gulp
+- gem install jekyll
 
 # Build docs, test build
 script:
