@@ -1,13 +1,25 @@
 # .travis.yml
+language: node_js
 node_js:
 - '4'
 
-env:
-  global:
-    - GIT_NAME: Travis CI
-    - GIT_EMAIL: nobody@nobody.org
-    - GITHUB_REPO: anhskohbo/jekyll-for-frontend
-    - GIT_SOURCE: docs
+cache:
+  directories:
+  - node_modules
 
+# Build docs, test build
+script:
+- gulp build
+- gulp build:min
+- npm install docpress && ./node_modules/.bin/docpress build
+
+# Deploy to gh-pages
 after_success:
 - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm install git-update-ghpages && ./node_modules/.bin/git-update-ghpages -e; fi
+
+env:
+  global:
+  - GIT_NAME: Travis CI
+  - GIT_EMAIL: nobody@nobody.org
+  - GITHUB_REPO: anhskohbo/jekyll-for-frontend
+  - GIT_SOURCE: _docpress
