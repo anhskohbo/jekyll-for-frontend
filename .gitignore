@@ -1,6 +1,7 @@
-node_modules/
-dist-min/
 dist/
+dist-min/
+node_modules/
+_docpress/
 .sass-cache
 .jekyll-metadata
 *.css.map

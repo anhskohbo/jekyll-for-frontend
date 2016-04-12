@@ -1,0 +1,13 @@
+# .travis.yml
+node_js:
+- '4'
+
+env:
+  global:
+    - GIT_NAME: Travis CI
+    - GIT_EMAIL: nobody@nobody.org
+    - GITHUB_REPO: anhskohbo/jekyll-for-frontend
+    - GIT_SOURCE: docs
+
+after_success:
+- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm install git-update-ghpages && ./node_modules/.bin/git-update-ghpages -e; fi
