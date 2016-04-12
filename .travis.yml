@@ -7,8 +7,10 @@ cache:
   directories:
   - node_modules
 
-# Build docs, test...
+# Build docs, test build
 script:
+- gulp build
+- gulp build:min
 - npm install docpress && ./node_modules/.bin/docpress build
 
 # Deploy to gh-pages
