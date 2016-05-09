@@ -23,3 +23,13 @@ You will se the light.
 ## Gulp command
 
 ...
+
+## Build docs
+
+You need `docpress` to build document.
+
+```
+docpress
+```
+
+
