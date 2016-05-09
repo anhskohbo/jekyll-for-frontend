@@ -16,8 +16,8 @@
                     {% endif %}
                     <ul>
                         {% for entry in type.items %}
-                        <li id="#guide-{{ entry.title | slugify }}">{{ entry.title }}</option>
-                            {% endfor %}
+                        <li id="#guide-{{ entry.title | slugify }}">{{ entry.title }}</li>
+                        {% endfor %}
                     </ul>
                     {% endfor %}
                 </ul>
