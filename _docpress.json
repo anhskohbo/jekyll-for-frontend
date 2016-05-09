@@ -21,6 +21,11 @@
             "title": "Gulp command",
             "depth": 2,
             "id": "gulp-command"
+          },
+          {
+            "title": "Build docs",
+            "depth": 2,
+            "id": "build-docs"
           }
         ]
       }
@@ -46,6 +51,11 @@
           "title": "Gulp command",
           "depth": 2,
           "id": "gulp-command"
+        },
+        {
+          "title": "Build docs",
+          "depth": 2,
+          "id": "build-docs"
         }
       ]
     }
