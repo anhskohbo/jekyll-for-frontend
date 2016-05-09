@@ -1,2 +1,5 @@
 {% assign id = include.id | slugify: 'pretty' | remove: '/' | prepend:'/' %}
-{{ site.wp | where: "id", id }}
+
+{% for w in site.wp %}
+    {% if w.id == id %} {{ w.content }} {% endif %}
+{% endfor %}
