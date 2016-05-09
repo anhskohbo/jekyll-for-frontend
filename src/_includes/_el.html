@@ -1,4 +1,4 @@
-{% assign id = include.id | slugify: 'pretty' | remove: '/' | prepend:'/' %}
+{% assign id = include.id | slugify: 'pretty' | remove_first: '/' | prepend:'/' %}
 
 {% for c in site.components %}
     {% if c.id == id %} {{ c.content }} {% endif %}
