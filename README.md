@@ -32,4 +32,4 @@ You need `docpress` to build document.
 docpress
 ```
 
-
+For more document, pls checkout https://jekyllrb.com/docs/home/
