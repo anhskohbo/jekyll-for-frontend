@@ -28,6 +28,46 @@
             "id": "build-docs"
           }
         ]
+      },
+      {
+        "title": "Cài đặt",
+        "source": "docs/install.md",
+        "url": "install.html",
+        "slug": "install",
+        "headings": [
+          {
+            "title": "Cài đặt trên Windows",
+            "depth": 2,
+            "id": "cai-t-tren-windows",
+            "headings": [
+              {
+                "title": "Cài đặt git",
+                "depth": 3,
+                "id": "cai-t-git"
+              },
+              {
+                "title": "Cài đặt nodejs",
+                "depth": 3,
+                "id": "cai-t-nodejs"
+              },
+              {
+                "title": "Cài đặt ruby và jekyll",
+                "depth": 3,
+                "id": "cai-t-ruby-va-jekyll"
+              },
+              {
+                "title": "Cài đặt python",
+                "depth": 3,
+                "id": "cai-t-python"
+              }
+            ]
+          },
+          {
+            "title": "Cài đặt jekyll-for-frontend",
+            "depth": 2,
+            "id": "cai-t-jekyll-for-frontend"
+          }
+        ]
       }
     ]
   },
@@ -58,9 +98,49 @@
           "id": "build-docs"
         }
       ]
+    },
+    "install.html": {
+      "source": "docs/install.md",
+      "title": "Cài đặt",
+      "slug": "install",
+      "headings": [
+        {
+          "title": "Cài đặt trên Windows",
+          "depth": 2,
+          "id": "cai-t-tren-windows",
+          "headings": [
+            {
+              "title": "Cài đặt git",
+              "depth": 3,
+              "id": "cai-t-git"
+            },
+            {
+              "title": "Cài đặt nodejs",
+              "depth": 3,
+              "id": "cai-t-nodejs"
+            },
+            {
+              "title": "Cài đặt ruby và jekyll",
+              "depth": 3,
+              "id": "cai-t-ruby-va-jekyll"
+            },
+            {
+              "title": "Cài đặt python",
+              "depth": 3,
+              "id": "cai-t-python"
+            }
+          ]
+        },
+        {
+          "title": "Cài đặt jekyll-for-frontend",
+          "depth": 2,
+          "id": "cai-t-jekyll-for-frontend"
+        }
+      ]
     }
   },
   "sources": {
-    "README.md": "index.html"
+    "README.md": "index.html",
+    "docs/install.md": "install.html"
   }
 }
