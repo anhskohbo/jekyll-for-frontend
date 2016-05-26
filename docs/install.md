@@ -14,6 +14,12 @@ Tải git cho Windows tại địa chỉ: https://git-scm.com/download/win
 
 Tải nodejs v6.x tại địa chỉ: https://nodejs.org/en/ (Chú ý chọn phiên bản 6 mới nhất thay vì v4 LTS)
 
+Mở CMD và gõ dòng lệnh dưới để cài `gulp`:
+
+```
+npm install -g gulp
+```
+
 ### Cài đặt ruby và jekyll
 
 Tải ruby 2.3 và ruby-devkit tại địa chỉ: 
@@ -35,3 +41,20 @@ gem install jekyll
 Tải về python 2.7 cho Windows tại địa chỉ: https://www.python.org/downloads/windows/
 
 Xem thêm phần cài đặt python tại đây: http://www.howtogeek.com/197947/how-to-install-python-on-windows/
+
+
+## Cài đặt jekyll-for-frontend
+
+Clone jekyll-for-frontend về máy:
+
+```
+git clone https://github.com/anhskohbo/jekyll-for-frontend
+```
+
+Trỏ đến thư mục chứa source code bằng CMD và gõ: `npm install`
+
+Sau khi cài xong là đã hoàn tất quá trình cài đặt.
+
+Gõ: `gulp` để xem thành quả.
+
+
