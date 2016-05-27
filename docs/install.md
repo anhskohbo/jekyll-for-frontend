@@ -64,3 +64,31 @@ Mỗi khi mở máy bạn chỉ cần chạy dòng lệnh:
 ```
 cd ~/Homestead && vagrant up
 ```
+
+### Chạy Jekyll For Frontend 
+
+Lưu ý: Các dòng lệnh dưới đây phải được chạy thông qua môi trường máy ảo vagrant, do đó bạn cần login vào máy ảo để làm việc với nó:
+
+```
+cd ~/Homestead && vagrant ssh
+```
+
+Clone jekyll-for-frontend về máy và tiến hành cài đặt các packages:
+
+```
+cd HTML
+git clone https://github.com/anhskohbo/jekyll-for-frontend.git
+
+cd jekyll-for-frontend
+npm install
+```
+
+Sau khi quá trình cài đặt packages hoàn tất, bạn có thể chạy jekyll-for-frontend bất cứ lúc nào với dòng lệnh:
+
+```
+gulp
+```
+
+Lưu ý: Việc cài đặt packages chỉ dùng trong lần đầu cài đặt, sau khi đã cài đặt xong mỗi khi muốn build bạn chỉ cần gõ: `gulp`
+
+Document về jekyll: https://jekyllrb.com/docs/home
