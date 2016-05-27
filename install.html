@@ -18,33 +18,39 @@
         </div>
         <div class="markdown-body"><h1 id="cai-t">C&#xE0;i &#x111;&#x1EB7;t</h1>
 <p><strong>Jekyll For Frontend</strong> y&#xEA;u c&#x1EA7;u tr&#xEA;n m&#xE1;y c&#x1EA7;n c&#xF3; <code>nodejs</code>, <code>jekyll</code> v&#xE0; <code>gulp</code> &#x111;&#x1EC3; ho&#x1EA1;t &#x111;&#x1ED9;ng.</p>
-<p>M&#x1ED9;t t&#xF9;y ch&#x1ECD;n kh&#xE1;c &#x111;&#xF3; l&#xE0; git, ruby, python c&#x169;ng c&#x1EA7;n ph&#x1EA3;i c&#xF3; tr&#xEA;n m&#xE1;y.</p>
+<p>&#x110;&#x1EC3; &#x111;&#x1A1;n gi&#x1EA3;n h&#xF3;a ph&#x1EA7;n c&#xE0;i &#x111;&#x1EB7;t jekyll tr&#xEA;n Windows, b&#x1EA1;n s&#x1EBD; ch&#x1EA1;y jekyll for frontend qua Vagrant, Vagrant s&#x1EBD; cung c&#x1EA5;p cho b&#x1EA1;n m&#x1ED9;t m&#xF4;i tr&#x1B0;&#x1EDD;ng &#x1EA3;o Linux v&#xE0; do &#x111;&#xF3; vi&#x1EC7;c s&#x1EED; d&#x1EE5;ng c&#xE1;c c&#xF4;ng c&#x1EE5; b&#xEA;n Linux s&#x1EBD; h&#x1EBF;t s&#x1EE9;c d&#x1EC5; d&#xE0;ng.</p>
 <h2 id="cai-t-tren-windows">C&#xE0;i &#x111;&#x1EB7;t tr&#xEA;n Windows</h2>
-<h3 id="cai-t-git">C&#xE0;i &#x111;&#x1EB7;t git</h3>
+<h3 id="cai-t-git">C&#xE0;i &#x111;&#x1EB7;t GIT</h3>
 <p>T&#x1EA3;i git cho Windows t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
-<h3 id="cai-t-nodejs">C&#xE0;i &#x111;&#x1EB7;t nodejs</h3>
-<p>T&#x1EA3;i nodejs v6.x t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;: <a href="https://nodejs.org/en/">https://nodejs.org/en/</a> (Ch&#xFA; &#xFD; ch&#x1ECD;n phi&#xEA;n b&#x1EA3;n 6 m&#x1EDB;i nh&#x1EA5;t thay v&#xEC; v4 LTS)</p>
-<p>M&#x1EDF; CMD v&#xE0; g&#xF5; d&#xF2;ng l&#x1EC7;nh d&#x1B0;&#x1EDB;i &#x111;&#x1EC3; c&#xE0;i <code>gulp</code>:</p>
-<pre><code>npm install -g gulp
+<h2 id="cai-t-vagrant">C&#xE0;i &#x111;&#x1EB7;t Vagrant</h2>
+<p>B&#x1EA1;n c&#x1EA7;n c&#xF3; Virtualbox &#x111;&#x1EC3; Vagrant c&#xF3; th&#x1EC3; ho&#x1EA1;t &#x111;&#x1ED9;ng, t&#x1EA3;i v&#xE0; c&#xE0;i t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;: <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
+<p>T&#x1EA3;i v&#xE0; c&#xE0;i &#x111;&#x1EB7;t Vagrant t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;: <a href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a></p>
+<p>Restart l&#x1EA1;i m&#xE1;y khi c&#xE0;i xong.</p>
+<p>B&#x1EA1;n s&#x1EBD; c&#x1EA7;n c&#xE0;i th&#xEA;m plugin <code>Vagrant::Hostsupdater</code>:</p>
+<pre><code>vagrant plugin install vagrant-hostsupdater
 </code></pre>
-<h3 id="cai-t-ruby-va-jekyll">C&#xE0;i &#x111;&#x1EB7;t ruby v&#xE0; jekyll</h3>
-<p>T&#x1EA3;i ruby 2.3 v&#xE0; ruby-devkit t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;:</p>
-<p><a href="http://rubyinstaller.org/downloads">http://rubyinstaller.org/downloads</a></p>
-<p>Xem th&#xEA;m ph&#x1EA7;n c&#xE0;i &#x111;&#x1EB7;t Ruby t&#x1EA1;i &#x111;&#xE2;y: <a href="http://jekyll-windows.juthilo.com/1-ruby-and-devkit/">http://jekyll-windows.juthilo.com/1-ruby-and-devkit/</a></p>
-<p>C&#xE0;i &#x111;&#x1EB7;t jekyll</p>
-<p>M&#x1EDF; CMD v&#xE0; g&#xF5; d&#xF2;ng l&#x1EC7;ch sau:</p>
-<pre><code>gem install jekyll
+<h2 id="setup-homestead">Setup Homestead</h2>
+<p>Homestead l&#xE0; m&#x1ED9;t &quot;box&quot; c&#x1EE7;a Vagrant v&#x1EDB;i l&#x1B0;&#x1EE3;ng ng&#x1B0;&#x1EDD;i d&#xF9;ng l&#x1EDB;n v&#xE0; nhi&#x1EC1;u t&#xED;nh n&#x103;ng h&#x1EEF;u &#xED;ch.</p>
+<h3 id="cai-t-homestead-vagrant-box">C&#xE0;i &#x111;&#x1EB7;t Homestead Vagrant Box</h3>
+<p>M&#x1ED9;t khi b&#x1EA1;n c&#xE0;i &#x111;&#x1EB7;t th&#xE0;nh c&#xF4;ng Git, Virtualbox v&#xE0; Vagrant, b&#x1EA1;n c&#x1EA7;n c&#xE0;i homestead box &#x111;&#x1EC3; m&#xE1;y &#x1EA3;o c&#xF3; th&#x1EC3; ho&#x1EA1;t &#x111;&#x1ED9;ng. M&#x1EDF; CMD l&#xEA;n v&#xE0; g&#xF5; d&#xF2;ng l&#x1EC7;nh sau &#x111;&#x1EC3; c&#xE0;i:</p>
+<pre><code>vagrant box add laravel/homestead
 </code></pre>
-<h3 id="cai-t-python">C&#xE0;i &#x111;&#x1EB7;t python</h3>
-<p>T&#x1EA3;i v&#x1EC1; python 2.7 cho Windows t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;: <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a></p>
-<p>Xem th&#xEA;m ph&#x1EA7;n c&#xE0;i &#x111;&#x1EB7;t python t&#x1EA1;i &#x111;&#xE2;y: <a href="http://www.howtogeek.com/197947/how-to-install-python-on-windows/">http://www.howtogeek.com/197947/how-to-install-python-on-windows/</a></p>
-<h2 id="cai-t-jekyll-for-frontend">C&#xE0;i &#x111;&#x1EB7;t jekyll-for-frontend</h2>
-<p>Clone jekyll-for-frontend v&#x1EC1; m&#xE1;y:</p>
-<pre><code>git clone https://github.com/anhskohbo/jekyll-for-frontend
+<p>Qu&#xE1; tr&#xEC;nh n&#xE0;y s&#x1EBD; m&#x1EA5;t m&#x1ED9;t kho&#x1EA3;ng th&#x1EDD;i gian t&#xF9;y thu&#x1ED9;c v&#xE0;o t&#x1ED1;c &#x111;&#x1ED9; m&#x1EA1;ng c&#x1EE7;a b&#x1EA1;n.</p>
+<h3 id="cai-t-homestead">C&#xE0;i &#x111;&#x1EB7;t Homestead</h3>
+<pre><code>cd ~
+git clone https://github.com/laravel/homestead.git Homestead
+cd Homestead
+bash init.sh
 </code></pre>
-<p>Tr&#x1ECF; &#x111;&#x1EBF;n th&#x1B0; m&#x1EE5;c ch&#x1EE9;a source code b&#x1EB1;ng CMD v&#xE0; g&#xF5;: <code>npm install</code></p>
-<p>Sau khi c&#xE0;i xong l&#xE0; &#x111;&#xE3; ho&#xE0;n t&#x1EA5;t qu&#xE1; tr&#xEC;nh c&#xE0;i &#x111;&#x1EB7;t.</p>
-<p>G&#xF5;: <code>gulp</code> &#x111;&#x1EC3; xem th&#xE0;nh qu&#x1EA3;.</p>
+<p>T&#xEC;m hi&#xEA;u th&#xEA;m v&#x1EC1; c&#x1A1; ch&#x1EBF; ho&#x1EA1;t &#x111;&#x1ED9;ng c&#x1EE7;a Homestead t&#x1EA1;i: <a href="https://laravel.com/docs/master/homestead">https://laravel.com/docs/master/homestead</a></p>
+<h3 id="setup-ssh-key">Setup SSH Key</h3>
+<p>M&#x1EDF; Git bash l&#xEA;n v&#xE0; g&#xF5;:</p>
+<pre><code>ssh-keygen -t rsa -C &quot;nobody@homestead&quot;
+</code></pre>
+<h3 id="chy-homestead-vagrant">Ch&#x1EA1;y Homestead Vagrant</h3>
+<p>M&#x1ED7;i khi m&#x1EDF; m&#xE1;y b&#x1EA1;n ch&#x1EC9; c&#x1EA7;n ch&#x1EA1;y d&#xF2;ng l&#x1EC7;nh:</p>
+<pre><code>cd ~/Homestead &amp;&amp; vagrant up
+</code></pre>
 
         </div>
         <div class="footer-nav">
@@ -60,17 +66,23 @@
               <ul class="headings heading-list">
                 <li class="heading-item -depth-2"><a href="#cai-t-tren-windows" class="hlink link-cai-t-tren-windows">Cài đặt trên Windows</a>
                   <ul class="heading-list -depth-2">
-                    <li class="heading-item -depth-3"><a href="#cai-t-git" class="hlink link-cai-t-git">Cài đặt git</a>
-                    </li>
-                    <li class="heading-item -depth-3"><a href="#cai-t-nodejs" class="hlink link-cai-t-nodejs">Cài đặt nodejs</a>
-                    </li>
-                    <li class="heading-item -depth-3"><a href="#cai-t-ruby-va-jekyll" class="hlink link-cai-t-ruby-va-jekyll">Cài đặt ruby và jekyll</a>
-                    </li>
-                    <li class="heading-item -depth-3"><a href="#cai-t-python" class="hlink link-cai-t-python">Cài đặt python</a>
+                    <li class="heading-item -depth-3"><a href="#cai-t-git" class="hlink link-cai-t-git">Cài đặt GIT</a>
                     </li>
                   </ul>
                 </li>
-                <li class="heading-item -depth-2"><a href="#cai-t-jekyll-for-frontend" class="hlink link-cai-t-jekyll-for-frontend">Cài đặt jekyll-for-frontend</a>
+                <li class="heading-item -depth-2"><a href="#cai-t-vagrant" class="hlink link-cai-t-vagrant">Cài đặt Vagrant</a>
+                </li>
+                <li class="heading-item -depth-2"><a href="#setup-homestead" class="hlink link-setup-homestead">Setup Homestead</a>
+                  <ul class="heading-list -depth-2">
+                    <li class="heading-item -depth-3"><a href="#cai-t-homestead-vagrant-box" class="hlink link-cai-t-homestead-vagrant-box">Cài đặt Homestead Vagrant Box</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a href="#cai-t-homestead" class="hlink link-cai-t-homestead">Cài đặt Homestead</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a href="#setup-ssh-key" class="hlink link-setup-ssh-key">Setup SSH Key</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a href="#chy-homestead-vagrant" class="hlink link-chy-homestead-vagrant">Chạy Homestead Vagrant</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>

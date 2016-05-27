@@ -41,31 +41,43 @@
             "id": "cai-t-tren-windows",
             "headings": [
               {
-                "title": "Cài đặt git",
+                "title": "Cài đặt GIT",
                 "depth": 3,
                 "id": "cai-t-git"
-              },
-              {
-                "title": "Cài đặt nodejs",
-                "depth": 3,
-                "id": "cai-t-nodejs"
-              },
-              {
-                "title": "Cài đặt ruby và jekyll",
-                "depth": 3,
-                "id": "cai-t-ruby-va-jekyll"
-              },
-              {
-                "title": "Cài đặt python",
-                "depth": 3,
-                "id": "cai-t-python"
               }
             ]
           },
           {
-            "title": "Cài đặt jekyll-for-frontend",
+            "title": "Cài đặt Vagrant",
             "depth": 2,
-            "id": "cai-t-jekyll-for-frontend"
+            "id": "cai-t-vagrant"
+          },
+          {
+            "title": "Setup Homestead",
+            "depth": 2,
+            "id": "setup-homestead",
+            "headings": [
+              {
+                "title": "Cài đặt Homestead Vagrant Box",
+                "depth": 3,
+                "id": "cai-t-homestead-vagrant-box"
+              },
+              {
+                "title": "Cài đặt Homestead",
+                "depth": 3,
+                "id": "cai-t-homestead"
+              },
+              {
+                "title": "Setup SSH Key",
+                "depth": 3,
+                "id": "setup-ssh-key"
+              },
+              {
+                "title": "Chạy Homestead Vagrant",
+                "depth": 3,
+                "id": "chy-homestead-vagrant"
+              }
+            ]
           }
         ]
       }
@@ -110,31 +122,43 @@
           "id": "cai-t-tren-windows",
           "headings": [
             {
-              "title": "Cài đặt git",
+              "title": "Cài đặt GIT",
               "depth": 3,
               "id": "cai-t-git"
-            },
-            {
-              "title": "Cài đặt nodejs",
-              "depth": 3,
-              "id": "cai-t-nodejs"
-            },
-            {
-              "title": "Cài đặt ruby và jekyll",
-              "depth": 3,
-              "id": "cai-t-ruby-va-jekyll"
-            },
-            {
-              "title": "Cài đặt python",
-              "depth": 3,
-              "id": "cai-t-python"
             }
           ]
         },
         {
-          "title": "Cài đặt jekyll-for-frontend",
+          "title": "Cài đặt Vagrant",
           "depth": 2,
-          "id": "cai-t-jekyll-for-frontend"
+          "id": "cai-t-vagrant"
+        },
+        {
+          "title": "Setup Homestead",
+          "depth": 2,
+          "id": "setup-homestead",
+          "headings": [
+            {
+              "title": "Cài đặt Homestead Vagrant Box",
+              "depth": 3,
+              "id": "cai-t-homestead-vagrant-box"
+            },
+            {
+              "title": "Cài đặt Homestead",
+              "depth": 3,
+              "id": "cai-t-homestead"
+            },
+            {
+              "title": "Setup SSH Key",
+              "depth": 3,
+              "id": "setup-ssh-key"
+            },
+            {
+              "title": "Chạy Homestead Vagrant",
+              "depth": 3,
+              "id": "chy-homestead-vagrant"
+            }
+          ]
         }
       ]
     }
