@@ -76,6 +76,11 @@
                 "title": "Chạy Homestead Vagrant",
                 "depth": 3,
                 "id": "chy-homestead-vagrant"
+              },
+              {
+                "title": "Chạy Jekyll For Frontend",
+                "depth": 3,
+                "id": "chy-jekyll-for-frontend"
               }
             ]
           }
@@ -157,6 +162,11 @@
               "title": "Chạy Homestead Vagrant",
               "depth": 3,
               "id": "chy-homestead-vagrant"
+            },
+            {
+              "title": "Chạy Jekyll For Frontend",
+              "depth": 3,
+              "id": "chy-jekyll-for-frontend"
             }
           ]
         }

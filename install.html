@@ -51,6 +51,22 @@ bash init.sh
 <p>M&#x1ED7;i khi m&#x1EDF; m&#xE1;y b&#x1EA1;n ch&#x1EC9; c&#x1EA7;n ch&#x1EA1;y d&#xF2;ng l&#x1EC7;nh:</p>
 <pre><code>cd ~/Homestead &amp;&amp; vagrant up
 </code></pre>
+<h3 id="chy-jekyll-for-frontend">Ch&#x1EA1;y Jekyll For Frontend</h3>
+<p>L&#x1B0;u &#xFD;: C&#xE1;c d&#xF2;ng l&#x1EC7;nh d&#x1B0;&#x1EDB;i &#x111;&#xE2;y ph&#x1EA3;i &#x111;&#x1B0;&#x1EE3;c ch&#x1EA1;y th&#xF4;ng qua m&#xF4;i tr&#x1B0;&#x1EDD;ng m&#xE1;y &#x1EA3;o vagrant, do &#x111;&#xF3; b&#x1EA1;n c&#x1EA7;n login v&#xE0;o m&#xE1;y &#x1EA3;o &#x111;&#x1EC3; l&#xE0;m vi&#x1EC7;c v&#x1EDB;i n&#xF3;:</p>
+<pre><code>cd ~/Homestead &amp;&amp; vagrant ssh
+</code></pre>
+<p>Clone jekyll-for-frontend v&#x1EC1; m&#xE1;y v&#xE0; ti&#x1EBF;n h&#xE0;nh c&#xE0;i &#x111;&#x1EB7;t c&#xE1;c packages:</p>
+<pre><code>cd HTML
+git clone https://github.com/anhskohbo/jekyll-for-frontend.git
+
+cd jekyll-for-frontend
+npm install
+</code></pre>
+<p>Sau khi qu&#xE1; tr&#xEC;nh c&#xE0;i &#x111;&#x1EB7;t packages ho&#xE0;n t&#x1EA5;t, b&#x1EA1;n c&#xF3; th&#x1EC3; ch&#x1EA1;y jekyll-for-frontend b&#x1EA5;t c&#x1EE9; l&#xFA;c n&#xE0;o v&#x1EDB;i d&#xF2;ng l&#x1EC7;nh:</p>
+<pre><code>gulp
+</code></pre>
+<p>L&#x1B0;u &#xFD;: Vi&#x1EC7;c c&#xE0;i &#x111;&#x1EB7;t packages ch&#x1EC9; d&#xF9;ng trong l&#x1EA7;n &#x111;&#x1EA7;u c&#xE0;i &#x111;&#x1EB7;t, sau khi &#x111;&#xE3; c&#xE0;i &#x111;&#x1EB7;t xong m&#x1ED7;i khi mu&#x1ED1;n build b&#x1EA1;n ch&#x1EC9; c&#x1EA7;n g&#xF5;: <code>gulp</code></p>
+<p>Document v&#x1EC1; jekyll: <a href="https://jekyllrb.com/docs/home">https://jekyllrb.com/docs/home</a></p>
 
         </div>
         <div class="footer-nav">
@@ -81,6 +97,8 @@ bash init.sh
                     <li class="heading-item -depth-3"><a href="#setup-ssh-key" class="hlink link-setup-ssh-key">Setup SSH Key</a>
                     </li>
                     <li class="heading-item -depth-3"><a href="#chy-homestead-vagrant" class="hlink link-chy-homestead-vagrant">Chạy Homestead Vagrant</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a href="#chy-jekyll-for-frontend" class="hlink link-chy-jekyll-for-frontend">Chạy Jekyll For Frontend</a>
                     </li>
                   </ul>
                 </li>
