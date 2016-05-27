@@ -2,38 +2,10 @@
   "toc": {
     "sections": [
       {
-        "title": "Jekyll For Frontend",
-        "source": "README.md",
-        "url": "index.html",
-        "slug": "index",
-        "headings": [
-          {
-            "title": "Install",
-            "depth": 2,
-            "id": "install"
-          },
-          {
-            "title": "How to run",
-            "depth": 2,
-            "id": "how-to-run"
-          },
-          {
-            "title": "Gulp command",
-            "depth": 2,
-            "id": "gulp-command"
-          },
-          {
-            "title": "Build docs",
-            "depth": 2,
-            "id": "build-docs"
-          }
-        ]
-      },
-      {
         "title": "Cài đặt",
         "source": "docs/install.md",
-        "url": "install.html",
-        "slug": "install",
+        "url": "index.html",
+        "slug": "index",
         "headings": [
           {
             "title": "Cài đặt trên Windows",
@@ -90,36 +62,9 @@
   },
   "index": {
     "index.html": {
-      "source": "README.md",
-      "title": "Jekyll For Frontend",
-      "slug": "index",
-      "headings": [
-        {
-          "title": "Install",
-          "depth": 2,
-          "id": "install"
-        },
-        {
-          "title": "How to run",
-          "depth": 2,
-          "id": "how-to-run"
-        },
-        {
-          "title": "Gulp command",
-          "depth": 2,
-          "id": "gulp-command"
-        },
-        {
-          "title": "Build docs",
-          "depth": 2,
-          "id": "build-docs"
-        }
-      ]
-    },
-    "install.html": {
       "source": "docs/install.md",
       "title": "Cài đặt",
-      "slug": "install",
+      "slug": "index",
       "headings": [
         {
           "title": "Cài đặt trên Windows",
@@ -174,7 +119,6 @@
     }
   },
   "sources": {
-    "README.md": "index.html",
-    "docs/install.md": "install.html"
+    "docs/install.md": "index.html"
   }
 }
