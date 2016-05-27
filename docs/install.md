@@ -2,59 +2,65 @@
 
 **Jekyll For Frontend** yêu cầu trên máy cần có `nodejs`, `jekyll` và `gulp` để hoạt động.
 
-Một tùy chọn khác đó là git, ruby, python cũng cần phải có trên máy.
+Để đơn giản hóa phần cài đặt jekyll trên Windows, bạn sẽ chạy jekyll for frontend qua Vagrant, Vagrant sẽ cung cấp cho bạn một môi trường ảo Linux và do đó việc sử dụng các công cụ bên Linux sẽ hết sức dễ dàng.
 
 ## Cài đặt trên Windows
 
-### Cài đặt git
+### Cài đặt GIT
 
 Tải git cho Windows tại địa chỉ: https://git-scm.com/download/win
 
-### Cài đặt nodejs
+## Cài đặt Vagrant
 
-Tải nodejs v6.x tại địa chỉ: https://nodejs.org/en/ (Chú ý chọn phiên bản 6 mới nhất thay vì v4 LTS)
+Bạn cần có Virtualbox để Vagrant có thể hoạt động, tải và cài tại địa chỉ: https://www.virtualbox.org/wiki/Downloads
 
-Mở CMD và gõ dòng lệnh dưới để cài `gulp`:
+Tải và cài đặt Vagrant tại địa chỉ: https://www.vagrantup.com/downloads.html
 
-```
-npm install -g gulp
-```
+Restart lại máy khi cài xong.
 
-### Cài đặt ruby và jekyll
-
-Tải ruby 2.3 và ruby-devkit tại địa chỉ: 
-
-http://rubyinstaller.org/downloads
-
-Xem thêm phần cài đặt Ruby tại đây: http://jekyll-windows.juthilo.com/1-ruby-and-devkit/
-
-Cài đặt jekyll 
-
-Mở CMD và gõ dòng lệch sau:
+Bạn sẽ cần cài thêm plugin `Vagrant::Hostsupdater`:
 
 ```
-gem install jekyll
+vagrant plugin install vagrant-hostsupdater
 ```
 
-### Cài đặt python
+## Setup Homestead 
 
-Tải về python 2.7 cho Windows tại địa chỉ: https://www.python.org/downloads/windows/
+Homestead là một "box" của Vagrant với lượng người dùng lớn và nhiều tính năng hữu ích.
 
-Xem thêm phần cài đặt python tại đây: http://www.howtogeek.com/197947/how-to-install-python-on-windows/
+### Cài đặt Homestead Vagrant Box
 
-
-## Cài đặt jekyll-for-frontend
-
-Clone jekyll-for-frontend về máy:
+Một khi bạn cài đặt thành công Git, Virtualbox và Vagrant, bạn cần cài homestead box để máy ảo có thể hoạt động. Mở CMD lên và gõ dòng lệnh sau để cài:
 
 ```
-git clone https://github.com/anhskohbo/jekyll-for-frontend
+vagrant box add laravel/homestead
 ```
 
-Trỏ đến thư mục chứa source code bằng CMD và gõ: `npm install`
+Quá trình này sẽ mất một khoảng thời gian tùy thuộc vào tốc độ mạng của bạn.
 
-Sau khi cài xong là đã hoàn tất quá trình cài đặt.
+### Cài đặt Homestead 
 
-Gõ: `gulp` để xem thành quả.
+```
+cd ~
+git clone https://github.com/laravel/homestead.git Homestead
+cd Homestead
+bash init.sh
+```
 
+Tìm hiêu thêm về cơ chế hoạt động của Homestead tại: https://laravel.com/docs/master/homestead
 
+### Setup SSH Key
+
+Mở Git bash lên và gõ:
+
+```
+ssh-keygen -t rsa -C "nobody@homestead"
+```
+
+### Chạy Homestead Vagrant 
+
+Mỗi khi mở máy bạn chỉ cần chạy dòng lệnh:
+
+```
+cd ~/Homestead && vagrant up
+```
