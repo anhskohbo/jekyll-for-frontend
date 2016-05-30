@@ -24,6 +24,12 @@ Bạn sẽ cần cài thêm plugin `Vagrant::Hostsupdater`:
 vagrant plugin install vagrant-hostsupdater
 ```
 
+Lưu ý trên Windows, bạn cần cấp quyền người dùng ghi file `C:\Windows\system32\drivers\etc\hosts`.
+
+Mở thư mục`C:\Windows\system32\drivers\etc`, chuột phải vào tập tin `hosts` chọn `Properties` và thiết lập như hình:
+
+![hosts](https://cloud.githubusercontent.com/assets/153285/14584788/74a71dfe-0427-11e6-919e-04b54d68ac23.png)
+
 ## Setup Homestead 
 
 Homestead là một "box" của Vagrant với lượng người dùng lớn và nhiều tính năng hữu ích.
@@ -71,6 +77,9 @@ Lưu ý: Các dòng lệnh dưới đây phải được chạy thông qua môi 
 
 ```
 cd ~/Homestead && vagrant ssh
+wget https://gist.githubusercontent.com/anhskohbo/ba35e7a8e80ee2327cccbd9f75a2ce64/raw/14160fafed2b7785bcfd325357d0602052963e39/jekyll-installer.sh
+chmod +x ./jekyll-installer.sh
+./jekyll-installer.sh
 ```
 
 Clone jekyll-for-frontend về máy và tiến hành cài đặt các packages:
