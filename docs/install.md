@@ -71,6 +71,8 @@ Mỗi khi mở máy bạn chỉ cần chạy dòng lệnh:
 cd ~/Homestead && vagrant up
 ```
 
+Nếu có lỗi trong quá trình khởi chạy, thử với cách sau: http://superuser.com/questions/597121/vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system
+
 ### Chạy Jekyll For Frontend 
 
 Lưu ý: Các dòng lệnh dưới đây phải được chạy thông qua môi trường máy ảo vagrant, do đó bạn cần login vào máy ảo để làm việc với nó:
@@ -89,7 +91,13 @@ cd HTML
 git clone https://github.com/anhskohbo/jekyll-for-frontend.git
 
 cd jekyll-for-frontend
-npm install
+npm install --no-bin-links
+```
+
+Nếu có lỗi, vui lòng thử chạy lệch sau:
+
+```
+npm rebuild node-sass --no-bin-links
 ```
 
 Sau khi quá trình cài đặt packages hoàn tất, bạn có thể chạy jekyll-for-frontend bất cứ lúc nào với dòng lệnh:
