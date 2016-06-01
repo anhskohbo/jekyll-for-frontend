@@ -10,13 +10,13 @@
             <nav class="list-group" id="component-selector">
                 <ul id="component-select">
                     {% for type in componentsByType %} {% if type.name != "" %}
-                    <li id="#guide-{{ type.name }}">{{ type.name | capitalize }}</li>
+                    <li><a href="#jf-components-{{ type.name | slugify }}">{{ type.name | capitalize }}</a></li>
                     {% else %}
-                    <li>Basic</li>
+                    <li><a href="#jf-conponents-basic">Basic</a></li>
                     {% endif %}
                     <ul>
                         {% for entry in type.items %}
-                        <li id="#guide-{{ entry.title | slugify }}">{{ entry.title }}</li>
+                        <li><a href="#jf-conponent-{{ entry.title | slugify }}">{{ entry.title }}</a></li>
                         {% endfor %}
                     </ul>
                     {% endfor %}
@@ -27,10 +27,12 @@
 
         <div class="col-md-10">
             {% for type in componentsByType %}
-            <h2 id="guide-{{ type.name }}" class="cf">{{ type.name | capitalize }}</h2> {% for entry in type.items %}
+            <h2 id="jf-conponents-{{ type.name | slugify }}" class="cf">{{ type.name | capitalize }}</h2>
+
+            {% for entry in type.items %}
             <article class="component">
                 <header class="component-header">
-                    <h3 id="guide-{{ entry.title | slugify }}">{{ entry.title }}</h3> {% if entry.usage %}
+                    <h3 id="jf-conponent-{{ entry.title | slugify }}">{{ entry.title }}</h3> {% if entry.usage %}
                     <p><strong>Usage:</strong> {{ entry.usage }}</p>{% endif %} {% if entry.module %}
                     <p><strong>Include file:</strong> <a href="{{ site.owner.github-repo }}{{ entry.module }}">{{ entry.module }}</a></p>{% endif %} {% if entry.scss %}
                     <p class="header-entry-last"><strong>SCSS file:</strong> <a href="{{ site.owner.github-repo }}{{ entry.scss }}">{{ entry.scss }}</a></p>{% endif %}
