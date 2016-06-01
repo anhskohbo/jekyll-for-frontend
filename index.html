@@ -54,6 +54,7 @@ bash init.sh
 <p>M&#x1ED7;i khi m&#x1EDF; m&#xE1;y b&#x1EA1;n ch&#x1EC9; c&#x1EA7;n ch&#x1EA1;y d&#xF2;ng l&#x1EC7;nh:</p>
 <pre><code>cd ~/Homestead &amp;&amp; vagrant up
 </code></pre>
+<p>N&#x1EBF;u c&#xF3; l&#x1ED7;i trong qu&#xE1; tr&#xEC;nh kh&#x1EDF;i ch&#x1EA1;y, th&#x1EED; v&#x1EDB;i c&#xE1;ch sau: <a href="http://superuser.com/questions/597121/vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system">http://superuser.com/questions/597121/vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system</a></p>
 <h3 id="chy-jekyll-for-frontend">Ch&#x1EA1;y Jekyll For Frontend</h3>
 <p>L&#x1B0;u &#xFD;: C&#xE1;c d&#xF2;ng l&#x1EC7;nh d&#x1B0;&#x1EDB;i &#x111;&#xE2;y ph&#x1EA3;i &#x111;&#x1B0;&#x1EE3;c ch&#x1EA1;y th&#xF4;ng qua m&#xF4;i tr&#x1B0;&#x1EDD;ng m&#xE1;y &#x1EA3;o vagrant, do &#x111;&#xF3; b&#x1EA1;n c&#x1EA7;n login v&#xE0;o m&#xE1;y &#x1EA3;o &#x111;&#x1EC3; l&#xE0;m vi&#x1EC7;c v&#x1EDB;i n&#xF3;:</p>
 <pre><code>cd ~/Homestead &amp;&amp; vagrant ssh
@@ -66,7 +67,10 @@ chmod +x ./jekyll-installer.sh
 git clone https://github.com/anhskohbo/jekyll-for-frontend.git
 
 cd jekyll-for-frontend
-npm install
+npm install --no-bin-links
+</code></pre>
+<p>N&#x1EBF;u c&#xF3; l&#x1ED7;i, vui l&#xF2;ng th&#x1EED; ch&#x1EA1;y l&#x1EC7;ch sau:</p>
+<pre><code>npm rebuild node-sass --no-bin-links
 </code></pre>
 <p>Sau khi qu&#xE1; tr&#xEC;nh c&#xE0;i &#x111;&#x1EB7;t packages ho&#xE0;n t&#x1EA5;t, b&#x1EA1;n c&#xF3; th&#x1EC3; ch&#x1EA1;y jekyll-for-frontend b&#x1EA5;t c&#x1EE9; l&#xFA;c n&#xE0;o v&#x1EDB;i d&#xF2;ng l&#x1EC7;nh:</p>
 <pre><code>gulp
