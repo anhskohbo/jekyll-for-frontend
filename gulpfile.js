@@ -194,11 +194,11 @@ gulp.task('watch', function () {
   var watchRebuild = [
     'src/img/**/*',
     'src/js/**/*.js',
+    'src/**/*.html',
   ];
 
   var watchForceRebuild = [
     '_config.yml',
-    'src/**/*.html',
     'src/_data/**/*',
   ];
 
