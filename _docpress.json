@@ -16,38 +16,16 @@
                 "title": "Cài đặt GIT",
                 "depth": 3,
                 "id": "cai-t-git"
-              }
-            ]
-          },
-          {
-            "title": "Cài đặt Vagrant",
-            "depth": 2,
-            "id": "cai-t-vagrant"
-          },
-          {
-            "title": "Setup Homestead",
-            "depth": 2,
-            "id": "setup-homestead",
-            "headings": [
-              {
-                "title": "Cài đặt Homestead Vagrant Box",
-                "depth": 3,
-                "id": "cai-t-homestead-vagrant-box"
               },
               {
-                "title": "Cài đặt Homestead",
+                "title": "Cài đặt Chocolatey",
                 "depth": 3,
-                "id": "cai-t-homestead"
+                "id": "cai-t-chocolatey"
               },
               {
-                "title": "Setup SSH Key",
+                "title": "Cài đặt các gói phụ thuộc:",
                 "depth": 3,
-                "id": "setup-ssh-key"
-              },
-              {
-                "title": "Chạy Homestead Vagrant",
-                "depth": 3,
-                "id": "chy-homestead-vagrant"
+                "id": "cai-t-cac-goi-ph-thuc:"
               },
               {
                 "title": "Chạy Jekyll For Frontend",
@@ -75,38 +53,16 @@
               "title": "Cài đặt GIT",
               "depth": 3,
               "id": "cai-t-git"
-            }
-          ]
-        },
-        {
-          "title": "Cài đặt Vagrant",
-          "depth": 2,
-          "id": "cai-t-vagrant"
-        },
-        {
-          "title": "Setup Homestead",
-          "depth": 2,
-          "id": "setup-homestead",
-          "headings": [
-            {
-              "title": "Cài đặt Homestead Vagrant Box",
-              "depth": 3,
-              "id": "cai-t-homestead-vagrant-box"
             },
             {
-              "title": "Cài đặt Homestead",
+              "title": "Cài đặt Chocolatey",
               "depth": 3,
-              "id": "cai-t-homestead"
+              "id": "cai-t-chocolatey"
             },
             {
-              "title": "Setup SSH Key",
+              "title": "Cài đặt các gói phụ thuộc:",
               "depth": 3,
-              "id": "setup-ssh-key"
-            },
-            {
-              "title": "Chạy Homestead Vagrant",
-              "depth": 3,
-              "id": "chy-homestead-vagrant"
+              "id": "cai-t-cac-goi-ph-thuc:"
             },
             {
               "title": "Chạy Jekyll For Frontend",

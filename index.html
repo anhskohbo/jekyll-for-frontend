@@ -17,66 +17,37 @@
           </div>
         </div>
         <div class="markdown-body"><h1 id="cai-t">C&#xE0;i &#x111;&#x1EB7;t</h1>
-<p><strong>Jekyll For Frontend</strong> y&#xEA;u c&#x1EA7;u tr&#xEA;n m&#xE1;y c&#x1EA7;n c&#xF3; <code>nodejs</code>, <code>jekyll</code> v&#xE0; <code>gulp</code> &#x111;&#x1EC3; ho&#x1EA1;t &#x111;&#x1ED9;ng.</p>
-<p>&#x110;&#x1EC3; &#x111;&#x1A1;n gi&#x1EA3;n h&#xF3;a ph&#x1EA7;n c&#xE0;i &#x111;&#x1EB7;t jekyll tr&#xEA;n Windows, b&#x1EA1;n s&#x1EBD; ch&#x1EA1;y jekyll for frontend qua Vagrant, Vagrant s&#x1EBD; cung c&#x1EA5;p cho b&#x1EA1;n m&#x1ED9;t m&#xF4;i tr&#x1B0;&#x1EDD;ng &#x1EA3;o Linux v&#xE0; do &#x111;&#xF3; vi&#x1EC7;c s&#x1EED; d&#x1EE5;ng c&#xE1;c c&#xF4;ng c&#x1EE5; b&#xEA;n Linux s&#x1EBD; h&#x1EBF;t s&#x1EE9;c d&#x1EC5; d&#xE0;ng.</p>
+<p><strong>Jekyll For Frontend</strong> y&#xEA;u c&#x1EA7;u tr&#xEA;n m&#xE1;y c&#x1EA7;n c&#xF3; <code>jekyll</code>, <code>nodejs</code> v&#xE0; <code>gulp</code> &#x111;&#x1EC3; ho&#x1EA1;t &#x111;&#x1ED9;ng.</p>
 <h2 id="cai-t-tren-windows">C&#xE0;i &#x111;&#x1EB7;t tr&#xEA;n Windows</h2>
 <h3 id="cai-t-git">C&#xE0;i &#x111;&#x1EB7;t GIT</h3>
 <p>T&#x1EA3;i git cho Windows t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
-<h2 id="cai-t-vagrant">C&#xE0;i &#x111;&#x1EB7;t Vagrant</h2>
-<p>B&#x1EA1;n c&#x1EA7;n c&#xF3; Virtualbox &#x111;&#x1EC3; Vagrant c&#xF3; th&#x1EC3; ho&#x1EA1;t &#x111;&#x1ED9;ng, t&#x1EA3;i v&#xE0; c&#xE0;i t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;: <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></p>
-<p>T&#x1EA3;i v&#xE0; c&#xE0;i &#x111;&#x1EB7;t Vagrant t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;: <a href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a></p>
-<p>Restart l&#x1EA1;i m&#xE1;y khi c&#xE0;i xong.</p>
-<p>B&#x1EA1;n s&#x1EBD; c&#x1EA7;n c&#xE0;i th&#xEA;m plugin <code>Vagrant::Hostsupdater</code>:</p>
-<pre><code>vagrant plugin install vagrant-hostsupdater
+<p>Document v&#x1EC1; jekyll: <a href="https://jekyllrb.com/docs/home">https://jekyllrb.com/docs/home</a></p>
+<h3 id="cai-t-chocolatey">C&#xE0;i &#x111;&#x1EB7;t Chocolatey</h3>
+<p><a href="https://chocolatey.org">Chocolatey</a> l&#xE0; m&#x1ED9;t <code>Software Management</code> cho Windows, b&#x1EA1;n c&#xF3; th&#x1EC3; d&#x1EC5; d&#xE0;ng c&#xE0;i m&#x1ED9;t ho&#x1EB7;c nhi&#x1EC1;u ph&#x1EA7;n m&#x1EC1;m ch&#x1EC9; v&#x1EDB;i m&#x1ED9;t d&#xF2;ng l&#x1EC7;nh.</p>
+<p>M&#x1EDF; CMD v&#x1EDB;i quy&#x1EC1;n admin v&#xE0; ch&#x1EA1;y d&#xF2;ng l&#x1EC7;nh:</p>
+<pre><code>@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((new-object net.webclient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))&quot; &amp;&amp; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 </code></pre>
-<p>L&#x1B0;u &#xFD; tr&#xEA;n Windows, b&#x1EA1;n c&#x1EA7;n c&#x1EA5;p quy&#x1EC1;n ng&#x1B0;&#x1EDD;i d&#xF9;ng ghi file <code>C:\Windows\system32\drivers\etc\hosts</code>.</p>
-<p>M&#x1EDF; th&#x1B0; m&#x1EE5;c<code>C:\Windows\system32\drivers\etc</code>, chu&#x1ED9;t ph&#x1EA3;i v&#xE0;o t&#x1EAD;p tin <code>hosts</code> ch&#x1ECD;n <code>Properties</code> v&#xE0; thi&#x1EBF;t l&#x1EAD;p nh&#x1B0; h&#xEC;nh:</p>
-<p><img src="https://cloud.githubusercontent.com/assets/153285/14584788/74a71dfe-0427-11e6-919e-04b54d68ac23.png" alt="hosts"></p>
-<h2 id="setup-homestead">Setup Homestead</h2>
-<p>Homestead l&#xE0; m&#x1ED9;t &quot;box&quot; c&#x1EE7;a Vagrant v&#x1EDB;i l&#x1B0;&#x1EE3;ng ng&#x1B0;&#x1EDD;i d&#xF9;ng l&#x1EDB;n v&#xE0; nhi&#x1EC1;u t&#xED;nh n&#x103;ng h&#x1EEF;u &#xED;ch.</p>
-<h3 id="cai-t-homestead-vagrant-box">C&#xE0;i &#x111;&#x1EB7;t Homestead Vagrant Box</h3>
-<p>M&#x1ED9;t khi b&#x1EA1;n c&#xE0;i &#x111;&#x1EB7;t th&#xE0;nh c&#xF4;ng Git, Virtualbox v&#xE0; Vagrant, b&#x1EA1;n c&#x1EA7;n c&#xE0;i homestead box &#x111;&#x1EC3; m&#xE1;y &#x1EA3;o c&#xF3; th&#x1EC3; ho&#x1EA1;t &#x111;&#x1ED9;ng. M&#x1EDF; CMD l&#xEA;n v&#xE0; g&#xF5; d&#xF2;ng l&#x1EC7;nh sau &#x111;&#x1EC3; c&#xE0;i:</p>
-<pre><code>vagrant box add laravel/homestead
+<h3 id="cai-t-cac-goi-ph-thuc:">C&#xE0;i &#x111;&#x1EB7;t c&#xE1;c g&#xF3;i ph&#x1EE5; thu&#x1ED9;c:</h3>
+<p>C&#xE0;i &#x111;&#x1EB7;t <a href="https://jekyllrb.com/docs/windows/">jekyll</a>:</p>
+<ol>
+<li>C&#xE0;i &#x111;&#x1EB7;t Ruby qua Choco: <code>choco install ruby -y</code></li>
+<li>T&#x1EAF;t v&#xE0; m&#x1EDF; l&#x1EA1;i CMD (v&#x1EDB;i quy&#x1EC1;n admin) v&#xE0; c&#xE0;i jekyll: <code>gem install jekyll</code></li>
+</ol>
+<p>C&#xE0;i &#x111;&#x1EB7;t <code>nodejs</code> v&#xE0; <code>gulp</code>:</p>
+<pre><code>choco install nodejs -y
+npm install -g gulp
 </code></pre>
-<p>Qu&#xE1; tr&#xEC;nh n&#xE0;y s&#x1EBD; m&#x1EA5;t m&#x1ED9;t kho&#x1EA3;ng th&#x1EDD;i gian t&#xF9;y thu&#x1ED9;c v&#xE0;o t&#x1ED1;c &#x111;&#x1ED9; m&#x1EA1;ng c&#x1EE7;a b&#x1EA1;n.</p>
-<h3 id="cai-t-homestead">C&#xE0;i &#x111;&#x1EB7;t Homestead</h3>
-<pre><code>cd ~
-git clone https://github.com/laravel/homestead.git Homestead
-cd Homestead
-bash init.sh
-</code></pre>
-<p>T&#xEC;m hi&#xEA;u th&#xEA;m v&#x1EC1; c&#x1A1; ch&#x1EBF; ho&#x1EA1;t &#x111;&#x1ED9;ng c&#x1EE7;a Homestead t&#x1EA1;i: <a href="https://laravel.com/docs/master/homestead">https://laravel.com/docs/master/homestead</a></p>
-<h3 id="setup-ssh-key">Setup SSH Key</h3>
-<p>M&#x1EDF; Git bash l&#xEA;n v&#xE0; g&#xF5;:</p>
-<pre><code>ssh-keygen -t rsa -C &quot;nobody@homestead&quot;
-</code></pre>
-<h3 id="chy-homestead-vagrant">Ch&#x1EA1;y Homestead Vagrant</h3>
-<p>M&#x1ED7;i khi m&#x1EDF; m&#xE1;y b&#x1EA1;n ch&#x1EC9; c&#x1EA7;n ch&#x1EA1;y d&#xF2;ng l&#x1EC7;nh:</p>
-<pre><code>cd ~/Homestead &amp;&amp; vagrant up
-</code></pre>
-<p>N&#x1EBF;u c&#xF3; l&#x1ED7;i trong qu&#xE1; tr&#xEC;nh kh&#x1EDF;i ch&#x1EA1;y, th&#x1EED; v&#x1EDB;i c&#xE1;ch sau: <a href="http://superuser.com/questions/597121/vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system">http://superuser.com/questions/597121/vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system</a></p>
 <h3 id="chy-jekyll-for-frontend">Ch&#x1EA1;y Jekyll For Frontend</h3>
-<p>L&#x1B0;u &#xFD;: C&#xE1;c d&#xF2;ng l&#x1EC7;nh d&#x1B0;&#x1EDB;i &#x111;&#xE2;y ph&#x1EA3;i &#x111;&#x1B0;&#x1EE3;c ch&#x1EA1;y th&#xF4;ng qua m&#xF4;i tr&#x1B0;&#x1EDD;ng m&#xE1;y &#x1EA3;o vagrant, do &#x111;&#xF3; b&#x1EA1;n c&#x1EA7;n login v&#xE0;o m&#xE1;y &#x1EA3;o &#x111;&#x1EC3; l&#xE0;m vi&#x1EC7;c v&#x1EDB;i n&#xF3;:</p>
-<pre><code>cd ~/Homestead &amp;&amp; vagrant ssh
-wget https://gist.githubusercontent.com/anhskohbo/ba35e7a8e80ee2327cccbd9f75a2ce64/raw/14160fafed2b7785bcfd325357d0602052963e39/jekyll-installer.sh
-chmod +x ./jekyll-installer.sh
-./jekyll-installer.sh
-</code></pre>
 <p>Clone jekyll-for-frontend v&#x1EC1; m&#xE1;y v&#xE0; ti&#x1EBF;n h&#xE0;nh c&#xE0;i &#x111;&#x1EB7;t c&#xE1;c packages:</p>
 <pre><code>cd HTML
 git clone https://github.com/anhskohbo/jekyll-for-frontend.git
 
 cd jekyll-for-frontend
-npm install --no-bin-links
+npm install
 </code></pre>
-<p>N&#x1EBF;u c&#xF3; l&#x1ED7;i, vui l&#xF2;ng th&#x1EED; ch&#x1EA1;y l&#x1EC7;ch sau:</p>
-<pre><code>npm rebuild node-sass --no-bin-links
-</code></pre>
-<p>Sau khi qu&#xE1; tr&#xEC;nh c&#xE0;i &#x111;&#x1EB7;t packages ho&#xE0;n t&#x1EA5;t, b&#x1EA1;n c&#xF3; th&#x1EC3; ch&#x1EA1;y jekyll-for-frontend b&#x1EA5;t c&#x1EE9; l&#xFA;c n&#xE0;o v&#x1EDB;i d&#xF2;ng l&#x1EC7;nh:</p>
+<p>Sau khi qu&#xE1; tr&#xEC;nh c&#xE0;i &#x111;&#x1EB7;t packages ho&#xE0;n t&#x1EA5;t, b&#x1EA1;n c&#xF3; th&#x1EC3; ch&#x1EA1;y <code>jekyll-for-frontend</code> b&#x1EA5;t c&#x1EE9; l&#xFA;c n&#xE0;o v&#x1EDB;i d&#xF2;ng l&#x1EC7;nh:</p>
 <pre><code>gulp
 </code></pre>
-<p>L&#x1B0;u &#xFD;: Vi&#x1EC7;c c&#xE0;i &#x111;&#x1EB7;t packages ch&#x1EC9; d&#xF9;ng trong l&#x1EA7;n &#x111;&#x1EA7;u c&#xE0;i &#x111;&#x1EB7;t, sau khi &#x111;&#xE3; c&#xE0;i &#x111;&#x1EB7;t xong m&#x1ED7;i khi mu&#x1ED1;n build b&#x1EA1;n ch&#x1EC9; c&#x1EA7;n g&#xF5;: <code>gulp</code></p>
-<p>Document v&#x1EC1; jekyll: <a href="https://jekyllrb.com/docs/home">https://jekyllrb.com/docs/home</a></p>
 
         </div>
       </div>
@@ -89,19 +60,9 @@ npm install --no-bin-links
                   <ul class="heading-list -depth-2">
                     <li class="heading-item -depth-3"><a href="#cai-t-git" class="hlink link-cai-t-git">Cài đặt GIT</a>
                     </li>
-                  </ul>
-                </li>
-                <li class="heading-item -depth-2"><a href="#cai-t-vagrant" class="hlink link-cai-t-vagrant">Cài đặt Vagrant</a>
-                </li>
-                <li class="heading-item -depth-2"><a href="#setup-homestead" class="hlink link-setup-homestead">Setup Homestead</a>
-                  <ul class="heading-list -depth-2">
-                    <li class="heading-item -depth-3"><a href="#cai-t-homestead-vagrant-box" class="hlink link-cai-t-homestead-vagrant-box">Cài đặt Homestead Vagrant Box</a>
+                    <li class="heading-item -depth-3"><a href="#cai-t-chocolatey" class="hlink link-cai-t-chocolatey">Cài đặt Chocolatey</a>
                     </li>
-                    <li class="heading-item -depth-3"><a href="#cai-t-homestead" class="hlink link-cai-t-homestead">Cài đặt Homestead</a>
-                    </li>
-                    <li class="heading-item -depth-3"><a href="#setup-ssh-key" class="hlink link-setup-ssh-key">Setup SSH Key</a>
-                    </li>
-                    <li class="heading-item -depth-3"><a href="#chy-homestead-vagrant" class="hlink link-chy-homestead-vagrant">Chạy Homestead Vagrant</a>
+                    <li class="heading-item -depth-3"><a href="#cai-t-cac-goi-ph-thuc:" class="hlink link-cai-t-cac-goi-ph-thuc:">Cài đặt các gói phụ thuộc:</a>
                     </li>
                     <li class="heading-item -depth-3"><a href="#chy-jekyll-for-frontend" class="hlink link-chy-jekyll-for-frontend">Chạy Jekyll For Frontend</a>
                     </li>
