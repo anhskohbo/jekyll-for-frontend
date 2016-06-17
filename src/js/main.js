@@ -1,7 +1,7 @@
-(function($) {
+(function ($) {
   'use strict';
 
-  $(function() {
+  $(function () {
     // Init bootstrap plugins.
     $('[data-toggle="popover"]').popover();
     $('[data-toggle="tooltip"]').tooltip();
