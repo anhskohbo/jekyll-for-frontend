@@ -1,0 +1,25 @@
+.parallax {
+  overflow: hidden;
+  position: relative;
+
+  > * {
+    z-index: 10;
+    position: relative;
+  }
+}
+
+.parallax-ready {
+  background-image: none !important;
+}
+
+.parallax-mirror {
+  z-index: 0;
+  @include absolute(0,0,null,0);
+  pointer-events: none;
+
+  background-size: cover;
+  background-position: 50% 0;
+  background-image: inherit;
+  background-color: transparent;
+  background-attachment: scroll;
+}
