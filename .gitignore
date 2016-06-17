@@ -1,7 +1,11 @@
 dist/
 dist-min/
 node_modules/
+
 _docpress/
-.sass-cache
-.jekyll-metadata
+.sass-cache/
+
 *.css.map
+.jekyll-metadata
+
+src/css/main.css
