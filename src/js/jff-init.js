@@ -1,5 +1,5 @@
 /*!
- * jff-init v1.0.2
+ * JFF v0.1.1
  * @author anhskohbo <anhskohbo@gmail.com>
  */
 (function ($) {
