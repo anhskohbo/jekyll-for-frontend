@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "browser-sync": "^2.12.10",
+    "browser-sync": "^2.13.0",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -13,7 +13,7 @@
     "gulp-iconfont-css": "^2.1.0",
     "gulp-imagemin": "^3.0.1",
     "gulp-notify": "^2.2.0",
-    "gulp-sass": "^2.3.1",
+    "gulp-sass": "^2.3.2",
     "gulp-sequence": "^0.4.5",
     "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-uglify": "^1.5.3",
