@@ -1,4 +1,4 @@
-# Cài đặt 
+# Cài đặt
 
 **Jekyll For Frontend** yêu cầu trên máy cần có `jekyll`, `nodejs` và `gulp` để hoạt động.
 
@@ -34,7 +34,7 @@ choco install nodejs -y
 npm install -g gulp
 ```
 
-### Chạy Jekyll For Frontend 
+### Chạy Jekyll For Frontend
 
 Clone jekyll-for-frontend về máy và tiến hành cài đặt các packages:
 
@@ -44,6 +44,7 @@ git clone https://github.com/anhskohbo/jekyll-for-frontend.git
 
 cd jekyll-for-frontend
 npm install
+npm run clean
 ```
 
 Sau khi quá trình cài đặt packages hoàn tất, bạn có thể chạy `jekyll-for-frontend` bất cứ lúc nào với dòng lệnh:
