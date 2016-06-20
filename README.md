@@ -4,7 +4,7 @@
 
 Make sure you have `npm` and `jekyll`, `gulp` installed on your system. See more details to install it.
 
-Download this [repo](https://github.com/anhskohbo/jekyll-for-frontend/archive/master.zip) or clone to your computer. 
+Download this [repo](https://github.com/anhskohbo/jekyll-for-frontend/archive/master.zip) or clone to your computer.
 
 `$ git clone https://github.com/anhskohbo/jekyll-for-frontend.git`
 
@@ -17,19 +17,3 @@ cd jekyll-for-frontend
 npm install
 gulp
 ```
-
-You will se the light.
-
-## Gulp command
-
-...
-
-## Build docs
-
-You need `docpress` to build document.
-
-```
-docpress
-```
-
-For more document, pls checkout https://jekyllrb.com/docs/home/
