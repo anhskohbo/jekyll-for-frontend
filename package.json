@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "clean": "rm -r .git dist docs _docpress .travis.yml LICENSE docpress.json"
+  },
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "del": "^2.2.0",
