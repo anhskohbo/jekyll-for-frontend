@@ -16,7 +16,30 @@
               <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
           </div>
         </div>
-        <div class="markdown-body"><h2 id="google-maps">Google Maps</h2>
+        <div class="markdown-body"><h2 id="parallax-background">Parallax Background</h2>
+<p>Khai b&#xE1;o m&#x1ED9;t th&#x1EBB; s&#x1EED; d&#x1EE5;ng parallax.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-init</span>=<span class="pl-s">&quot;parallax&quot;</span> <span class="hljs-attr">data-parallax-image</span>=<span class="pl-s">&quot;path/to/file.jpg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>VD parallax v&#x1EDB;i to&#xE0;n b&#x1ED9; settings:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-init</span>=<span class="pl-s">&quot;parallax&quot;</span> <span class="hljs-attr">data-parallax-image</span>=<span class="pl-s">&quot;path/to/file.jpg&quot;</span> <span class="hljs-attr">data-speed</span>=<span class="pl-s">&quot;2&quot;</span> <span class="hljs-attr">data-parallax-fadeout</span>=<span class="pl-s">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h2 id="can-bng-chiu-cao-column:">C&#xE2;n b&#x1EB1;ng chi&#x1EC1;u cao column:</h2>
+<p>Th&#xEA;m class <code>row-eq-height</code> v&#xE0;o row c&#x1EA7;n c&#xE2;n b&#x1EB1;ng chi&#x1EC1;u cao column:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&quot;row row-eq-height&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&quot;col-md-4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&quot;col-md-4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="pl-s">&quot;col-md-4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h2 id="full-height-mt-th:">Full-height m&#x1ED9;t th&#x1EBB;:</h2>
+<p>Th&#xEA;m <code>data-height=&quot;full&quot;</code> v&#xE0;o th&#x1EBB; c&#x1EA7;n full-height:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-height</span>=<span class="pl-s">&quot;full&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>L&#x1B0;u &#xFD;: Full-height kh&#xE1;c v&#x1EDB;i fullscreen v&#xE0; ch&#x1EC9; ch&#x1EA1;y v&#x1EDB;i th&#x1EBB; &#x111;&#x1EA7;u ti&#xEA;n &#x111;&#x1B0;&#x1EE3;c g&#x1ECD;i trong m&#x1ED9;t trang.
+&#x110;&#x1EC3; s&#x1EED; d&#x1EE5;ng fullscreen v&#x1EDB;i m&#x1ED9;t th&#x1EBB; s&#x1EED; d&#x1EE5;ng: <code>data-height=&quot;fullscreen&quot;</code>:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-height</span>=<span class="pl-s">&quot;fullscreen&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h2 id="google-maps">Google Maps</h2>
 <p>Nh&#xFA;ng js map b&#x1EB1;ng c&#xE1;ch th&#xEA;m <code>load_gmaps: true</code> v&#xE0;o front-master c&#x1EE7;a page c&#x1EA7;n ch&#x1EA1;y map, VD:</p>
 <pre><code>---
 title: Home
@@ -34,6 +57,7 @@ load_gmaps: true
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">$(<span class="hljs-function"><span class="pl-k">function</span>(<span class="hljs-params"></span>) </span>{ JFFUtils.gMapInit(<span class="pl-s">&apos;#map&apos;</span>); })</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 <p><img src="https://cloud.githubusercontent.com/assets/1529454/16222957/057bb878-37c5-11e6-8c38-2b8da1a41efa.png" alt="screenshot from 2016-06-21 15-24-18"></p>
+<p>C&#xE1;c style c&#xF3; s&#x1EB5;n: <code>grayscale</code>, <code>ultra-light</code>, <code>shades-of-grey</code>, <code>blue-water</code>, <code>pale-dawn</code>, <code>light-dream</code>, <code>light-monochrome</code></p>
 
         </div>
         <div class="footer-nav">
@@ -47,6 +71,12 @@ load_gmaps: true
             </li>
             <li class="menu-item -level-1"><a href="components.html" class="link title -active link-components">Components</a>
               <ul class="headings heading-list">
+                <li class="heading-item -depth-2"><a href="#parallax-background" class="hlink link-parallax-background">Parallax Background</a>
+                </li>
+                <li class="heading-item -depth-2"><a href="#can-bng-chiu-cao-column:" class="hlink link-can-bng-chiu-cao-column:">Cân bằng chiều cao column:</a>
+                </li>
+                <li class="heading-item -depth-2"><a href="#full-height-mt-th:" class="hlink link-full-height-mt-th:">Full-height một thẻ:</a>
+                </li>
                 <li class="heading-item -depth-2"><a href="#google-maps" class="hlink link-google-maps">Google Maps</a>
                 </li>
               </ul>
