@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=a44c9e9d">
+    <script src="assets/script.js?t=2bcc4b59"></script>
+    <title>Cài đặt</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="body page-install">
+        <div class="header-nav">
+          <div class="right"><a href="https://github.com/anhskohbo/jekyll-for-frontend" data-title="anhskohbo/jekyll-for-frontend" class="iconlink">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="cai-t">C&#xE0;i &#x111;&#x1EB7;t</h1>
+<p><strong>Jekyll For Frontend</strong> y&#xEA;u c&#x1EA7;u tr&#xEA;n m&#xE1;y c&#x1EA7;n c&#xF3; <code>jekyll</code>, <code>nodejs</code> v&#xE0; <code>gulp</code> &#x111;&#x1EC3; ho&#x1EA1;t &#x111;&#x1ED9;ng.</p>
+<h2 id="cai-t-tren-windows">C&#xE0;i &#x111;&#x1EB7;t tr&#xEA;n Windows</h2>
+<h3 id="cai-t-git">C&#xE0;i &#x111;&#x1EB7;t GIT</h3>
+<p>T&#x1EA3;i git cho Windows t&#x1EA1;i &#x111;&#x1ECB;a ch&#x1EC9;: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p>Document v&#x1EC1; jekyll: <a href="https://jekyllrb.com/docs/home">https://jekyllrb.com/docs/home</a></p>
+<h3 id="cai-t-chocolatey">C&#xE0;i &#x111;&#x1EB7;t Chocolatey</h3>
+<p><a href="https://chocolatey.org">Chocolatey</a> l&#xE0; m&#x1ED9;t <code>Software Management</code> cho Windows, b&#x1EA1;n c&#xF3; th&#x1EC3; d&#x1EC5; d&#xE0;ng c&#xE0;i m&#x1ED9;t ho&#x1EB7;c nhi&#x1EC1;u ph&#x1EA7;n m&#x1EC1;m ch&#x1EC9; v&#x1EDB;i m&#x1ED9;t d&#xF2;ng l&#x1EC7;nh.</p>
+<p>M&#x1EDF; CMD v&#x1EDB;i quy&#x1EC1;n admin v&#xE0; ch&#x1EA1;y d&#xF2;ng l&#x1EC7;nh:</p>
+<pre><code>@powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;iex ((new-object net.webclient).DownloadString(&apos;https://chocolatey.org/install.ps1&apos;))&quot; &amp;&amp; SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+</code></pre>
+<h3 id="cai-t-cac-goi-ph-thuc:">C&#xE0;i &#x111;&#x1EB7;t c&#xE1;c g&#xF3;i ph&#x1EE5; thu&#x1ED9;c:</h3>
+<p>C&#xE0;i &#x111;&#x1EB7;t <a href="https://jekyllrb.com/docs/windows/">jekyll</a>:</p>
+<ol>
+<li>C&#xE0;i &#x111;&#x1EB7;t Ruby qua Choco: <code>choco install ruby -y</code></li>
+<li>T&#x1EAF;t v&#xE0; m&#x1EDF; l&#x1EA1;i CMD (v&#x1EDB;i quy&#x1EC1;n admin) v&#xE0; c&#xE0;i jekyll: <code>gem install jekyll</code></li>
+</ol>
+<p>C&#xE0;i &#x111;&#x1EB7;t <code>nodejs</code> v&#xE0; <code>gulp</code>:</p>
+<pre><code>choco install nodejs -y
+npm install -g gulp
+</code></pre>
+<h3 id="chy-jekyll-for-frontend">Ch&#x1EA1;y Jekyll For Frontend</h3>
+<p>Clone jekyll-for-frontend v&#x1EC1; m&#xE1;y v&#xE0; ti&#x1EBF;n h&#xE0;nh c&#xE0;i &#x111;&#x1EB7;t c&#xE1;c packages:</p>
+<pre><code>cd HTML
+git clone https://github.com/anhskohbo/jekyll-for-frontend.git
+
+cd jekyll-for-frontend
+npm install
+npm run clean
+</code></pre>
+<p>Sau khi qu&#xE1; tr&#xEC;nh c&#xE0;i &#x111;&#x1EB7;t packages ho&#xE0;n t&#x1EA5;t, b&#x1EA1;n c&#xF3; th&#x1EC3; ch&#x1EA1;y <code>jekyll-for-frontend</code> b&#x1EA5;t c&#x1EE9; l&#xFA;c n&#xE0;o v&#x1EDB;i d&#xF2;ng l&#x1EC7;nh:</p>
+<pre><code>gulp
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="index.html"><span class="title">Jekyll For Frontend</span></a></div>
+          <div class="right"><a href="components.html"><span class="label">Next: </span><span class="title">Components</span></a></div>
+        </div>
+      </div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a href="index.html" class="link title  link-index">Jekyll For Frontend</a>
+            </li>
+            <li class="menu-item -level-1"><a href="install.html" class="link title -active link-install">Cài đặt</a>
+              <ul class="headings heading-list">
+                <li class="heading-item -depth-2"><a href="#cai-t-tren-windows" class="hlink link-cai-t-tren-windows">Cài đặt trên Windows</a>
+                  <ul class="heading-list -depth-2">
+                    <li class="heading-item -depth-3"><a href="#cai-t-git" class="hlink link-cai-t-git">Cài đặt GIT</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a href="#cai-t-chocolatey" class="hlink link-cai-t-chocolatey">Cài đặt Chocolatey</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a href="#cai-t-cac-goi-ph-thuc:" class="hlink link-cai-t-cac-goi-ph-thuc:">Cài đặt các gói phụ thuộc:</a>
+                    </li>
+                    <li class="heading-item -depth-3"><a href="#chy-jekyll-for-frontend" class="hlink link-chy-jekyll-for-frontend">Chạy Jekyll For Frontend</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item -level-1"><a href="components.html" class="link title  link-components">Components</a>
+            </li>
+          </ul>
+        </li>
+      </div>
+    </div>
+  </body>
+</html>

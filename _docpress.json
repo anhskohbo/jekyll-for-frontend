@@ -2,10 +2,28 @@
   "toc": {
     "sections": [
       {
-        "title": "Cài đặt",
-        "source": "docs/install.md",
+        "title": "Jekyll For Frontend",
+        "source": "README.md",
         "url": "index.html",
         "slug": "index",
+        "headings": [
+          {
+            "title": "Install",
+            "depth": 2,
+            "id": "install"
+          },
+          {
+            "title": "How to run",
+            "depth": 2,
+            "id": "how-to-run"
+          }
+        ]
+      },
+      {
+        "title": "Cài đặt",
+        "source": "docs/install.md",
+        "url": "install.html",
+        "slug": "install",
         "headings": [
           {
             "title": "Cài đặt trên Windows",
@@ -68,9 +86,26 @@
   },
   "index": {
     "index.html": {
+      "source": "README.md",
+      "title": "Jekyll For Frontend",
+      "slug": "index",
+      "headings": [
+        {
+          "title": "Install",
+          "depth": 2,
+          "id": "install"
+        },
+        {
+          "title": "How to run",
+          "depth": 2,
+          "id": "how-to-run"
+        }
+      ]
+    },
+    "install.html": {
       "source": "docs/install.md",
       "title": "Cài đặt",
-      "slug": "index",
+      "slug": "install",
       "headings": [
         {
           "title": "Cài đặt trên Windows",
@@ -130,7 +165,8 @@
     }
   },
   "sources": {
-    "docs/install.md": "index.html",
+    "README.md": "index.html",
+    "docs/install.md": "install.html",
     "docs/components.md": "components.html"
   }
 }
