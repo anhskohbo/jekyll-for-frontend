@@ -2,11 +2,13 @@
 
 ## Install
 
-Make sure you have `npm` and `jekyll`, `gulp` installed on your system. See more details to install it.
+Make sure you have `npm` and `jekyll`, `gulp` installed on your system.
 
 Download this [repo](https://github.com/anhskohbo/jekyll-for-frontend/archive/master.zip) or clone to your computer.
 
-`$ git clone https://github.com/anhskohbo/jekyll-for-frontend.git`
+```
+git clone https://github.com/anhskohbo/jekyll-for-frontend.git
+```
 
 ## How to run
 
