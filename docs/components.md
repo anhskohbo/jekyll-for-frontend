@@ -12,7 +12,7 @@ VD parallax với toàn bộ settings:
 <div data-init="parallax" data-parallax-image="path/to/file.jpg" data-speed="2" data-parallax-fadeout="true"></div>
 ```
 
-## Cân bằng chiều cao column:
+## Cân bằng chiều cao column
 
 Thêm class `row-eq-height` vào row cần cân bằng chiều cao column:
 
@@ -24,7 +24,7 @@ Thêm class `row-eq-height` vào row cần cân bằng chiều cao column:
 </div>
 ```
 
-## Full-height một thẻ:
+## Full-height một thẻ
 
 Thêm `data-height="full"` vào thẻ cần full-height:
 
