@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/style.css?t=a44c9e9d">
+    <script src="assets/script.js?t=2bcc4b59"></script>
+    <title>Components</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="body page-components">
+        <div class="header-nav">
+          <div class="right"><a href="https://github.com/anhskohbo/jekyll-for-frontend" data-title="anhskohbo/jekyll-for-frontend" class="iconlink">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h2 id="google-maps">Google Maps</h2>
+<p>Nh&#xFA;ng js map b&#x1EB1;ng c&#xE1;ch th&#xEA;m <code>load_gmaps: true</code> v&#xE0;o front-master c&#x1EE7;a page c&#x1EA7;n ch&#x1EA1;y map, VD:</p>
+<pre><code>---
+title: Home
+layout: default
+
+load_gmaps: true
+---
+</code></pre>
+<p>Kh&#x1EDF;i t&#x1EA1;o map:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="pl-s">&quot;map&quot;</span> <span class="hljs-attr">data-lat</span>=<span class="pl-s">&quot;21.0227358&quot;</span> <span class="hljs-attr">data-lng</span>=<span class="pl-s">&quot;105.8194541&quot;</span> <span class="hljs-attr">data-zoom</span>=<span class="pl-s">&quot;13&quot;</span> <span class="hljs-attr">data-style</span>=<span class="pl-s">&quot;light-monochrome&quot;</span> <span class="hljs-attr">style</span>=<span class="pl-s">&quot;height: 350px;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-map</span>=<span class="pl-s">&quot;marker&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-map</span>=<span class="pl-s">&quot;marker&quot;</span> <span class="hljs-attr">data-lat</span>=<span class="pl-s">&quot;21.0042555&quot;</span> <span class="hljs-attr">data-lng</span>=<span class="pl-s">&quot;105.823159&quot;</span>&gt;</span>Click me!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">$(<span class="hljs-function"><span class="pl-k">function</span>(<span class="hljs-params"></span>) </span>{ JFFUtils.gMapInit(<span class="pl-s">&apos;#map&apos;</span>); })</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="index.html"><span class="title">Cài đặt</span></a></div>
+        </div>
+      </div>
+      <div class="menu toc-menu">
+        <li class="menu-item -level-0 -parent">
+          <ul class="submenu">
+            <li class="menu-item -level-1"><a href="index.html" class="link title  link-index">Cài đặt</a>
+            </li>
+            <li class="menu-item -level-1"><a href="components.html" class="link title -active link-components">Components</a>
+              <ul class="headings heading-list">
+                <li class="heading-item -depth-2"><a href="#google-maps" class="hlink link-google-maps">Google Maps</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </div>
+    </div>
+  </body>
+</html>

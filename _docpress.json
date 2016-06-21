@@ -35,6 +35,19 @@
             ]
           }
         ]
+      },
+      {
+        "title": "Components",
+        "source": "docs/components.md",
+        "url": "components.html",
+        "slug": "components",
+        "headings": [
+          {
+            "title": "Google Maps",
+            "depth": 2,
+            "id": "google-maps"
+          }
+        ]
       }
     ]
   },
@@ -72,9 +85,22 @@
           ]
         }
       ]
+    },
+    "components.html": {
+      "source": "docs/components.md",
+      "title": "Components",
+      "slug": "components",
+      "headings": [
+        {
+          "title": "Google Maps",
+          "depth": 2,
+          "id": "google-maps"
+        }
+      ]
     }
   },
   "sources": {
-    "docs/install.md": "index.html"
+    "docs/install.md": "index.html",
+    "docs/components.md": "components.html"
   }
 }
