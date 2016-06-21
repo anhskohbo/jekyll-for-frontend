@@ -21,3 +21,6 @@ Khởi tạo map:
 
 <script>$(function() { JFFUtils.gMapInit('#map'); })</script>
 ```
+
+![screenshot from 2016-06-21 15-24-18](https://cloud.githubusercontent.com/assets/1529454/16222957/057bb878-37c5-11e6-8c38-2b8da1a41efa.png)
+
