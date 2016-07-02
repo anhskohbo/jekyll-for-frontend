@@ -87,7 +87,7 @@ gulp.task('iconfont', function () {
     cssClass: 'atf',
     fontPath: '../fonts/',
     path: 'src/_sass/vendor/_icons-template.scss',
-    targetPath: '../_sass/compoments/_icons.scss',
+    targetPath: '../_sass/components/_icons.scss',
   };
 
   return gulp.src('src/_svg/**/*.svg')
