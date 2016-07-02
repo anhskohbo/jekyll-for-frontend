@@ -179,7 +179,8 @@ gulp.task('force-rebuild-jekyll', ['force-jekyll-build'], function () {
 // Server via browserSync
 gulp.task('serve', ['build'], function () {
   browserSync.init({
-    server: './dist'
+    server: './dist',
+    directory: true
   });
 });
 
