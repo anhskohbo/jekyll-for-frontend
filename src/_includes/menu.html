@@ -1,25 +1,45 @@
-<ul class="nav navbar-nav main-navigation">
-    {% for nav in site.data.menu %}
+{% assign menu_class     = include.menu-class | default: 'nav navbar-nav main-navigation' %}
+{% assign dropdown_class = 'dropdown-menu' %}
+{% assign megamenu_class = 'megamenu-dropdown' %}
+{% assign active_class   = 'active' %}
+
+{% assign _loop_menu     = site.data.menu %}
+{% assign _is_dropdown   = false %}
+
+{% if include.menu %}
+    {% assign _loop_menu   = include.menu %}
+{% elsif include._dropdown %}
+    {% assign _loop_menu   = include._dropdown %}
+    {% assign _is_dropdown = true %}
+{% endif %}
+
+<ul class="{% if _is_dropdown %} {{ dropdown_class }} {% else %} {{ menu_class }} {% endif %}">
+    {% for nav in _loop_menu %}
     {% if nav.megamenu %}
-        <li class="megamenu">
-            <a href="{{ nav.href }}">{{ nav.title }}</a>
-            <div class="megamenu-dropdown">
-                {% include {{nav.megamenu}} %}
+
+        <li class="menu-item menu-item-has-megamenu megamenu">
+            <a href="{{ nav.href | default: '#' }}">{{ nav.title }}</a>
+
+            <div class="{{ megamenu_class }}">
+                {% include megamenu/{{ nav.megamenu }} %}
             </div>
         </li>
+
     {% elsif nav.submenu %}
-        <li class="dropdown">
-            <a href="{{ nav.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ nav.title }} <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-            {% for subnav in nav.submenu %}
-                <li><a href="{{ subnav.href }}">{{ subnav.title }}</a></li>
-            {% endfor %}
-            </ul>
+
+        <li class="menu-item menu-item-has-children dropdown">
+            <a href="{{ nav.href | default: '#' }}" class="dropdown-toggle" data-toggle="dropdown">{{ nav.title }} <b class="caret"></b></a>
+            {% include menu.html _dropdown=nav.submenu %}
         </li>
-    {% elsif page.url contains nav.href %}
-        <li class="active"><a href="{{ nav.href }}">{{ nav.title }}</a></li>
+
+    {% elsif page.name == nav.href %}
+
+        <li class="menu-item current-menu-item {{ active_class }}"><a href="{{ nav.href | default: '#' }}">{{ nav.title }}</a></li>
+
     {% else %}
-        <li><a href="{{ nav.href }}">{{ nav.title }}</a></li>
+
+        <li class="menu-item"><a href="{{ nav.href | default: '#' }}">{{ nav.title }}</a></li>
+
     {% endif %}
     {% endfor %}
 </ul>

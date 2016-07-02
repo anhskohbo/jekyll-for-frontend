@@ -6,12 +6,16 @@
 
 - title: Bootstrap
   href: bootstrap.html
+  # megamenu: example.html
 
 - title: Dropdown
-  href: #
+  href: "#"
   submenu:
-    - title: Submenu 1
-      href: "#"
+    - title: Home
+      href: index.html
 
-    - title: Submenu 2
-      href: "#main"
+    - title: Blog
+      href: single.html
+
+    - title: Dropdown Menu
+      href: "#"
