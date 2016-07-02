@@ -29,7 +29,7 @@
 
         <li class="menu-item menu-item-has-children dropdown">
             <a href="{{ nav.href | default: '#' }}" class="dropdown-toggle" data-toggle="dropdown">{{ nav.title }} <b class="caret"></b></a>
-            {% include menu.html _dropdown=nav.submenu %}
+            {% include core/menu.html _dropdown=nav.submenu %}
         </li>
 
     {% elsif page.name == nav.href %}
